@@ -64,8 +64,16 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - name: Setup Dashboard Dependencies
-        uses: ./.github/actions/setup-dashboard-dependencies
+      - name: Set up Node.js with Cache
+        uses: actions/setup-node@v4.1.0
+        with:
+          node-version: "23.5.0"
+          cache: "npm"
+          cache-dependency-path: "package-lock.json"
+      - name: Set up Just
+        uses: extractions/setup-just@v2
+      - name: Install Dependencies
+        run: npm ci
       - name: Run ESLint
         env:
           SARIF_ESLINT_IGNORE_SUPPRESSED: "true"
