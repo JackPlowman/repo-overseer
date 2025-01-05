@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import type { ColumnDef } from "@tanstack/react-table"
-import { Badge } from "@/components/ui/badge"
-import { Shield, ShieldAlert, GitPullRequest } from "lucide-react"
+import type { ColumnDef } from "@tanstack/react-table";
+import { Badge } from "@/components/ui/badge";
+import { Shield, ShieldAlert, GitPullRequest } from "lucide-react";
 
 type Repository = {
-  name: string
-  full_name: string
-  secret_scanning_push_protection: boolean
-  secret_scanning: boolean
-  dependabot_security_updates: boolean
-}
+  name: string;
+  full_name: string;
+  secret_scanning_push_protection: boolean;
+  secret_scanning: boolean;
+  dependabot_security_updates: boolean;
+};
 
 export const columns: ColumnDef<Repository>[] = [
   {
@@ -29,8 +29,16 @@ export const columns: ColumnDef<Repository>[] = [
       </div>
     ),
     cell: ({ row }) => (
-      <Badge variant={row.getValue("secret_scanning_push_protection") ? "success" : "destructive"}>
-        {row.getValue("secret_scanning_push_protection") ? "Enabled" : "Disabled"}
+      <Badge
+        variant={
+          row.getValue("secret_scanning_push_protection")
+            ? "success"
+            : "destructive"
+        }
+      >
+        {row.getValue("secret_scanning_push_protection")
+          ? "Enabled"
+          : "Disabled"}
       </Badge>
     ),
   },
@@ -43,7 +51,9 @@ export const columns: ColumnDef<Repository>[] = [
       </div>
     ),
     cell: ({ row }) => (
-      <Badge variant={row.getValue("secret_scanning") ? "success" : "destructive"}>
+      <Badge
+        variant={row.getValue("secret_scanning") ? "success" : "destructive"}
+      >
         {row.getValue("secret_scanning") ? "Enabled" : "Disabled"}
       </Badge>
     ),
@@ -57,9 +67,15 @@ export const columns: ColumnDef<Repository>[] = [
       </div>
     ),
     cell: ({ row }) => (
-      <Badge variant={row.getValue("dependabot_security_updates") ? "success" : "destructive"}>
+      <Badge
+        variant={
+          row.getValue("dependabot_security_updates")
+            ? "success"
+            : "destructive"
+        }
+      >
         {row.getValue("dependabot_security_updates") ? "Enabled" : "Disabled"}
       </Badge>
     ),
   },
-]
+];
