@@ -51,3 +51,32 @@ jobs:
           VALIDATE_TYPESCRIPT_STANDARD: false
           VALIDATE_TSX: false
           VALIDATE_TSX_PRETTIER: false
+
+  run-typescript-code-checks:
+    name: Run TypeScript Code Checks
+    runs-on: ubuntu-latest
+    permissions:
+      statuses: write
+      security-events: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Setup Dashboard Dependencies
+        uses: ./.github/actions/setup-dashboard-dependencies
+      - name: Run ESLint
+        env:
+          SARIF_ESLINT_IGNORE_SUPPRESSED: "true"
+        run: just dashboard::eslint-with-sarif
+        continue-on-error: true
+      - name: Upload analysis results to GitHub
+        uses: github/codeql-action/upload-sarif@v3.28.0
+        with:
+          sarif_file: dashboard/eslint-results.sarif
+          wait-for-processing: true
+      - name: Run Prettier
+        run: just dashboard::prettier-check
+      - name: Run ESLint
+        run: just dashboard::lint
