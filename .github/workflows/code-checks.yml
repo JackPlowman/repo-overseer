@@ -56,7 +56,6 @@ jobs:
     name: Run TypeScript Code Checks
     runs-on: ubuntu-latest
     permissions:
-      statuses: write
       security-events: write
     steps:
       - name: Checkout
