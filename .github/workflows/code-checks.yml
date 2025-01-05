@@ -77,14 +77,14 @@ jobs:
       - name: Run ESLint
         env:
           SARIF_ESLINT_IGNORE_SUPPRESSED: "true"
-        run: just dashboard::eslint-with-sarif
+        run: just eslint-with-sarif
         continue-on-error: true
       - name: Upload analysis results to GitHub
         uses: github/codeql-action/upload-sarif@v3.28.0
         with:
-          sarif_file: dashboard/eslint-results.sarif
+          sarif_file: eslint-results.sarif
           wait-for-processing: true
       - name: Run Prettier
-        run: just dashboard::prettier-check
+        run: just prettier-check
       - name: Run ESLint
-        run: just dashboard::lint
+        run: just lint
