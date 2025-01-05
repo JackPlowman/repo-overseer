@@ -30,6 +30,10 @@ jobs:
         run: poetry install
       - name: Run Validator
         run: poetry run python3 -m validator
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPOSITORY_OWNER: ${{ github.repository_owner }}
+
       - name: Upload Validator Results
         uses: actions/upload-artifact@v4.5.0
         with:
