@@ -31,7 +31,7 @@ jobs:
       - name: Run Validator
         run: poetry run python3 -m validator
         env:
-          INPUT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INPUT_GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           INPUT_REPOSITORY_OWNER: ${{ github.repository_owner }}
 
       - name: Upload Validator Results
