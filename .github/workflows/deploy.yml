@@ -24,6 +24,8 @@ jobs:
         uses: actions/setup-python@v2.3.0
         with:
           python-version: 3.13
+      - name: Install Poetry
+        run: pipx install poetry
       - name: Install dependencies
         run: poetry install
       - name: Run Validator
@@ -39,6 +41,7 @@ jobs:
     permissions:
       id-token: write
       pages: write
+    needs: run-validator
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4.2.2
