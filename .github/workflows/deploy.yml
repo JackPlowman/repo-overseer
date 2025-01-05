@@ -9,7 +9,32 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  run-validator:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v4.2.2
+        with:
+          repository: JackPlowman/repo_standards_validator
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v2.3.0
+        with:
+          python-version: 3.13
+      - name: Install dependencies
+        run: poetry install
+      - name: Run Validator
+        run: poetry run python3 -m validator
+      - name: Upload Validator Results
+        uses: actions/upload-artifact@v4.5.0
+        with:
+          name: validator-results
+          path: repositories.json
+
+  build-site:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -17,11 +42,19 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Download Validator Results
+        uses: actions/download-artifact@v4.1.8
+        with:
+          name: validator-results
+          path: src/data
       - name: Install, build, and upload your site
         uses: withastro/action@v3.0.0
 
   deploy:
-    needs: build
+    needs: build-site
     runs-on: ubuntu-latest
     permissions:
       id-token: write
