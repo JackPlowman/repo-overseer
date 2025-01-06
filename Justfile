@@ -4,7 +4,7 @@
 
 # Lint typescript code with ESLint
 lint:
-    npm run lint
+    npx eslint .
 
 # Lint typescript code with ESLint and generate a SARIF file
 eslint-with-sarif:
