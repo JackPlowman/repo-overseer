@@ -2,18 +2,6 @@ mod dashboard 'dashboard/dashboard.just'
 
 # mod tests 'tests/tests.just'
 # ------------------------------------------------------------------------------
-# General Commands
-# ------------------------------------------------------------------------------
-
-# Lint typescript code with ESLint
-lint:
-    npx eslint .
-
-# Lint typescript code with ESLint and generate a SARIF file
-eslint-with-sarif:
-    npx eslint . --format @microsoft/eslint-formatter-sarif --output-file eslint-results.sarif
-
-# ------------------------------------------------------------------------------
 # Prettier
 # ------------------------------------------------------------------------------
 

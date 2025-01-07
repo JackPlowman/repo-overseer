@@ -85,9 +85,9 @@ jobs:
           sarif_file: dashboard/eslint-results.sarif
           wait-for-processing: true
       - name: Run Prettier
-        run: just prettier-check
+        run: just dashboard::prettier-check
       - name: Run ESLint
-        run: just lint
+        run: just dashboard::lint
 
   check-markdown-links:
     name: Check Markdown links
