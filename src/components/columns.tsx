@@ -1,5 +1,4 @@
 "use client";
-
 import type { ColumnDef } from "@tanstack/react-table";
 import { Badge } from "@/components/ui/badge";
 import { Shield, ShieldAlert, GitPullRequest } from "lucide-react";
