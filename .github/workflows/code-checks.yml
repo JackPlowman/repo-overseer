@@ -51,6 +51,8 @@ jobs:
           VALIDATE_TYPESCRIPT_STANDARD: false
           VALIDATE_TSX: false
           VALIDATE_TSX_PRETTIER: false
+          VALIDATE_MARKDOWN_PRETTIER: false
+          VALIDATE_YAML_PRETTIER: false
 
   run-typescript-code-checks:
     name: Run TypeScript Code Checks
