@@ -33,7 +33,6 @@ jobs:
         env:
           INPUT_GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           INPUT_REPOSITORY_OWNER: ${{ github.repository_owner }}
-
       - name: Upload Validator Results
         uses: actions/upload-artifact@v4.5.0
         with:
@@ -56,9 +55,11 @@ jobs:
         uses: actions/download-artifact@v4.1.8
         with:
           name: validator-results
-          path: src/data
+          path: dashboard/src/data
       - name: Install, build, and upload your site
         uses: withastro/action@v3.0.0
+        with:
+          path: dashboard
 
   deploy:
     needs: build-site

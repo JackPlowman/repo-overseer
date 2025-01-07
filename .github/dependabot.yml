@@ -21,7 +21,7 @@ updates:
           - "minor"
 
   - package-ecosystem: "npm"
-    directory: "."
+    directory: "/dashboard"
     commit-message:
       prefix: "deps(typescript)"
     schedule:
