@@ -21,6 +21,8 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
+      - name: Remove Prettier Configuration
+        run: rm prettier.config.js
       # Lint and Format everything but Python/JavaScript/TypeScript
       - name: Lint Code Base
         uses: super-linter/super-linter/slim@v7.2.1
