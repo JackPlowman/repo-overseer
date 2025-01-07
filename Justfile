@@ -1,15 +1,6 @@
-# ------------------------------------------------------------------------------
-# General Commands
-# ------------------------------------------------------------------------------
+mod dashboard 'dashboard/dashboard.just'
 
-# Lint typescript code with ESLint
-lint:
-    npx eslint .
-
-# Lint typescript code with ESLint and generate a SARIF file
-eslint-with-sarif:
-    npx eslint . --format @microsoft/eslint-formatter-sarif --output-file eslint-results.sarif
-
+# mod tests 'tests/tests.just'
 # ------------------------------------------------------------------------------
 # Prettier
 # ------------------------------------------------------------------------------
@@ -29,7 +20,11 @@ prettier-format:
 # Format the Just code
 format:
     just --fmt --unstable
+    just --fmt --unstable --justfile dashboard/dashboard.just
+    # just --fmt --unstable --justfile tests/tests.just
 
 # Check for Just format issues
 format-check:
     just --fmt --check --unstable
+    just --fmt --check --unstable --justfile dashboard/dashboard.just
+    # just --fmt --check --unstable --justfile tests/tests.just

@@ -1,15 +1,15 @@
-"use client";
-import type { ColumnDef } from "@tanstack/react-table";
-import { Badge } from "@/components/ui/badge";
-import { Shield, ShieldAlert, GitPullRequest } from "lucide-react";
+"use client"
+import { Badge } from "@/components/ui/badge"
+import type { ColumnDef } from "@tanstack/react-table"
+import { GitPullRequest, Shield, ShieldAlert } from "lucide-react"
 
 type Repository = {
-  name: string;
-  full_name: string;
-  secret_scanning_push_protection: boolean;
-  secret_scanning: boolean;
-  dependabot_security_updates: boolean;
-};
+  name: string
+  full_name: string
+  secret_scanning_push_protection: boolean
+  secret_scanning: boolean
+  dependabot_security_updates: boolean
+}
 
 export const columns: ColumnDef<Repository>[] = [
   {
@@ -77,4 +77,4 @@ export const columns: ColumnDef<Repository>[] = [
       </Badge>
     ),
   },
-];
+]

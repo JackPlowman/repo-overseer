@@ -21,8 +21,6 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - name: Remove Prettier Configuration
-        run: rm prettier.config.js
       # Lint and Format everything but Python/JavaScript/TypeScript
       - name: Lint Code Base
         uses: super-linter/super-linter/slim@v7.2.1
@@ -41,8 +39,6 @@ jobs:
           VALIDATE_PYTHON_PYINK: false
           VALIDATE_CSS: false
           VALIDATE_CSS_PRETTIER: false
-          VALIDATE_JSON: false
-          VALIDATE_JSON_PRETTIER: false
           VALIDATE_JAVASCRIPT_ES: false
           VALIDATE_JAVASCRIPT_PRETTIER: false
           VALIDATE_JAVASCRIPT_STANDARD: false
@@ -53,8 +49,6 @@ jobs:
           VALIDATE_TYPESCRIPT_STANDARD: false
           VALIDATE_TSX: false
           VALIDATE_TSX_PRETTIER: false
-          VALIDATE_MARKDOWN_PRETTIER: false
-          VALIDATE_YAML_PRETTIER: false
 
   run-typescript-code-checks:
     name: Run TypeScript Code Checks
@@ -72,25 +66,26 @@ jobs:
         with:
           node-version: "23.5.0"
           cache: "npm"
-          cache-dependency-path: "package-lock.json"
+          cache-dependency-path: "dashboard/package-lock.json"
       - name: Set up Just
         uses: extractions/setup-just@v2
       - name: Install Dependencies
+        working-directory: dashboard
         run: npm ci
       - name: Run ESLint
         env:
           SARIF_ESLINT_IGNORE_SUPPRESSED: "true"
-        run: just eslint-with-sarif
+        run: just dashboard::eslint-with-sarif
         continue-on-error: true
       - name: Upload analysis results to GitHub
         uses: github/codeql-action/upload-sarif@v3.28.0
         with:
-          sarif_file: eslint-results.sarif
+          sarif_file: dashboard/eslint-results.sarif
           wait-for-processing: true
       - name: Run Prettier
-        run: just prettier-check
+        run: just dashboard::prettier-check
       - name: Run ESLint
-        run: just lint
+        run: just dashboard::lint
 
   check-markdown-links:
     name: Check Markdown links
