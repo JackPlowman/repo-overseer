@@ -16,7 +16,7 @@ jobs:
     permissions:
       statuses: write
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4.2.2
         with:
           fetch-depth: 0
@@ -56,7 +56,7 @@ jobs:
     permissions:
       security-events: write
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4.2.2
         with:
           fetch-depth: 0
@@ -118,3 +118,34 @@ jobs:
         uses: extractions/setup-just@v2
       - name: Check Justfile Format
         run: just format-check
+
+  run-zizmor:
+    name: Check GitHub Actions with zizmor
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set up Just
+        uses: extractions/setup-just@v2
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v5.3.0
+        with:
+          python-version: 3.13
+      - name: Install Poetry
+        run: pipx install poetry==2.0.0
+      - name: Install dependencies
+        run: just tests::install
+      - name: Run zizmor 🌈
+        run: poetry -C tests run zizmor --format sarif .. > results.sarif
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v3.28.0
+        with:
+          sarif_file: results.sarif
+          category: zizmor
