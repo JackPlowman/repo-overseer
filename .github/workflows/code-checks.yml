@@ -119,6 +119,29 @@ jobs:
       - name: Check Justfile Format
         run: just format-check
 
+  run-codeql-analysis:
+    name: CodeQL Analysis
+    runs-on: ubuntu-latest
+    permissions:
+      statuses: write
+      security-events: write
+    strategy:
+      matrix:
+        language: [python, javascript]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3.28.0
+        with:
+          languages: ${{ matrix.language }}
+          queries: security-and-quality
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3.28.0
+
   run-zizmor:
     name: Check GitHub Actions with zizmor
     runs-on: ubuntu-latest
