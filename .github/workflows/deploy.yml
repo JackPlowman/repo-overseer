@@ -96,4 +96,4 @@ jobs:
         working-directory: tests
         run: poetry install
       - name: Run UI Tests
-        run: just ui-tests
+        run: just tests::ui-tests
