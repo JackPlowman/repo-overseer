@@ -37,3 +37,18 @@ updates:
         update-types:
           - "patch"
           - "minor"
+
+  - package-ecosystem: "pip"
+    directory: "tests"
+    commit-message:
+      prefix: "deps(python-tests)"
+    schedule:
+      interval: "weekly"
+      day: "saturday"
+      time: "01:00"
+      timezone: "Europe/London"
+    target-branch: "main"
+    groups:
+      python-tests:
+        patterns:
+          - "*"
