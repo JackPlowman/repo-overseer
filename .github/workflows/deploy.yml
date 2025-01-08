@@ -95,5 +95,7 @@ jobs:
       - name: Install dependencies
         working-directory: tests
         run: poetry install
+      - name: Install Playwright Dependencies
+        run: just tests::playwright-install
       - name: Run UI Tests
         run: just tests::ui-tests
