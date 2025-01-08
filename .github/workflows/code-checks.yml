@@ -141,7 +141,7 @@ jobs:
       - name: Install dependencies
         run: just tests::install
       - name: Run zizmor 🌈
-        run: poetry -C tests run zizmor --format sarif . > results.sarif
+        run: poetry -C tests run zizmor --format sarif .. > results.sarif
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload SARIF file
