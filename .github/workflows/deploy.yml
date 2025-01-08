@@ -93,8 +93,7 @@ jobs:
       - name: Install Poetry
         run: pipx install poetry==2.0.0
       - name: Install dependencies
-        working-directory: tests
-        run: poetry install
+        run: just tests::install
       - name: Install Playwright Dependencies
         run: just tests::playwright-install
       - name: Run UI Tests
