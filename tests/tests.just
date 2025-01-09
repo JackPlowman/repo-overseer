@@ -25,7 +25,7 @@ ruff-fix:
     just tests::ruff-lint-fix
 
 # Check for Ruff issues
-ruff-lint:
+ruff-lint-check:
     poetry run ruff check .
 
 # Fix Ruff lint issues
@@ -33,7 +33,7 @@ ruff-lint-fix:
     poetry run ruff check . --fix
 
 # Check for Ruff format issues
-ruff-format:
+ruff-format-check:
     poetry run ruff format --check .
 
 # Fix Ruff format issues
