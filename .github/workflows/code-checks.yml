@@ -118,7 +118,7 @@ jobs:
       - name: Upload Ruff analysis results to GitHub
         uses: github/codeql-action/upload-sarif@v3.28.0
         with:
-          sarif_file: ruff-results.sarif
+          sarif_file: tests/ruff-results.sarif
           wait-for-processing: true
       - name: Check Python Code Format (Ruff)
         run: just tests::ruff-format-check
