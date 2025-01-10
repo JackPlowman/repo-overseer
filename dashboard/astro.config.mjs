@@ -1,3 +1,4 @@
+import MillionLint from "@million/lint";
 // @ts-check
 import { defineConfig } from "astro/config"
 
@@ -9,10 +10,15 @@ import tailwind from "@astrojs/tailwind"
 export default defineConfig({
   site: "https://jackplowman.github.io",
   base: "repo-overseer",
+
   integrations: [
     react(),
     tailwind({
       applyBaseStyles: false,
     }),
   ],
+
+  plugins: [MillionLint.vite({
+    enabled: true
+  })]
 })
