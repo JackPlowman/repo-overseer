@@ -128,7 +128,6 @@ jobs:
         run: just tests::ruff-lint-check
         env:
           RUFF_OUTPUT_FORMAT: "github"
-      
 
   check-markdown-links:
     name: Check Markdown links
