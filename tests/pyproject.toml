@@ -1,22 +1,15 @@
 [project]
 name = "tests"
-version = "1.0.0"
+dynamic = ["version"]
 requires-python = ">=3.13"
+dependencies = ["pytest==8.3.4", "pytest-playwright==0.6.2"]
+
+[project.optional-dependencies]
+dev = ["zizmor==1.1.0", "ruff==0.9.1"]
 
 [tool.poetry]
-name = "tests"
 package-mode = false
-
-[tool.poetry.dependencies]
-python = ">=3.13"
-pytest = "8.3.4"
-pytest-playwright = "0.6.2"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
-
-[tool.poetry.group.dev.dependencies]
-zizmor = "1.0.1"
-ruff = "0.8.6"
-
