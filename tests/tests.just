@@ -4,7 +4,7 @@
 
 # Install python dependencies
 install:
-    poetry install
+    poetry install -E dev
 
 # Install playwright dependencies
 playwright-install:
