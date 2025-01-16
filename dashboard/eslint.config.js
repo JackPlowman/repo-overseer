@@ -1,9 +1,9 @@
 import pluginJs from "@eslint/js"
 import eslintConfigPrettier from "eslint-config-prettier"
+import eslintPluginAstro from "eslint-plugin-astro"
 import pluginReact from "eslint-plugin-react"
 import globals from "globals"
 import tseslint from "typescript-eslint"
-import eslintPluginAstro from 'eslint-plugin-astro';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
