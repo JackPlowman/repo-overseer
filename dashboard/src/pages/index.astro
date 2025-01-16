@@ -1,9 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import "@/styles/globals.css"
-import { DataTable } from "@/components/data-table"
-import { columns } from "@/components/columns"
-import repositories from "@/data/repositories.json"
+import RepositoryTable from "@/components/RepositoryTable"
 ---
 
 <Layout>
@@ -14,7 +12,7 @@ import repositories from "@/data/repositories.json"
       Repository Security Overview
     </h1>
     <div class="rounded-md border bg-card">
-      <DataTable columns={columns} data={repositories.repositories} />
+      <RepositoryTable client:load />
     </div>
   </main>
 </Layout>
