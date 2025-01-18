@@ -1,8 +1,10 @@
 from playwright.sync_api import Page, expect
+
 from .utils.constants import DASHBOARD_URL
 
 
-def test_has_title(page: Page) -> None:
+def test_dashboard_has_title(page: Page) -> None:
+    """Check that the dashboard has the correct title."""
     # Act
     page.goto(DASHBOARD_URL)
     # Assert
