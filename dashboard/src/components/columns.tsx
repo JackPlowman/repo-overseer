@@ -3,7 +3,6 @@ import { Badge } from "@/components/ui/badge"
 import type { ColumnDef } from "@tanstack/react-table"
 import { GitPullRequest, Shield, ShieldAlert } from "lucide-react"
 
-
 type Repository = {
   name: string
   full_name: string
@@ -20,7 +19,7 @@ export const columns: ColumnDef<Repository>[] = [
     cell: ({ row }) => {
       return (
         <a
-          href={ row.original.repository_link}
+          href={row.original.repository_link}
           className="text-primary hover:underline"
           target="_blank"
           rel="noopener noreferrer"
