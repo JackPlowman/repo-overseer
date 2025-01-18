@@ -1,0 +1,102 @@
+{
+  "version": "0.18.1",
+  "uuid": "99919bfd-9685-4b73-aba2-98bc486693c5",
+  "timestamp": "2025-01-18T18:26:09+00:00",
+  "root": "/github/workspace",
+  "repository": {
+    "owner": "JackPlowman",
+    "name": "repo-overseer",
+    "branch": "dependabot/npm_and_yarn/dashboard/main/typescript-a4fa9d8d41"
+  },
+  "codebase": {
+    "totals": {
+      "JavaScript": {
+        "files": 4,
+        "lines_of_code": 0,
+        "functions": 0,
+        "hard_to_maintain": 0,
+        "unmaintainable": 0
+      },
+      "TypeScript": {
+        "files": 1,
+        "lines_of_code": 3,
+        "functions": 1,
+        "hard_to_maintain": 0,
+        "unmaintainable": 0
+      }
+    },
+    "tree": {
+      "./": {
+        "entries": [
+          "dashboard/"
+        ],
+        "profile": [3, 0, 0, 0]
+      },
+      "dashboard/": {
+        "entries": [
+          "prettier.config.js",
+          "tailwind.config.mjs",
+          "astro.config.mjs",
+          "eslint.config.js",
+          "src/"
+        ],
+        "profile": [3, 0, 0, 0]
+      },
+      "dashboard/src/lib/": {
+        "entries": [
+          "utils.ts"
+        ],
+        "profile": [3, 0, 0, 0]
+      },
+      "dashboard/src/": {
+        "entries": [
+          "lib/"
+        ],
+        "profile": [3, 0, 0, 0]
+      }
+    },
+    "files": {
+      "dashboard/prettier.config.js": {
+        "checksum": "8117b17c53fa8fe10eac2285761c78db",
+        "language": "JavaScript",
+        "loc": 0,
+        "profile": [0, 0, 0, 0],
+        "measurements": [
+        ]
+      },
+      "dashboard/tailwind.config.mjs": {
+        "checksum": "f352dab739fbca7de0ecb7b72f1fa538",
+        "language": "JavaScript",
+        "loc": 0,
+        "profile": [0, 0, 0, 0],
+        "measurements": [
+        ]
+      },
+      "dashboard/astro.config.mjs": {
+        "checksum": "fc6134dd0654a1838891b4c3e0ac3d0f",
+        "language": "JavaScript",
+        "loc": 0,
+        "profile": [0, 0, 0, 0],
+        "measurements": [
+        ]
+      },
+      "dashboard/eslint.config.js": {
+        "checksum": "7fd5f534c7d1850ac71e641be13ee1a4",
+        "language": "JavaScript",
+        "loc": 0,
+        "profile": [0, 0, 0, 0],
+        "measurements": [
+        ]
+      },
+      "dashboard/src/lib/utils.ts": {
+        "checksum": "5a6fd53fdcf2be529e9cc0b718fde352",
+        "language": "TypeScript",
+        "loc": 3,
+        "profile": [3, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "cn", "start": {"line": 4, "column": 17}, "end": {"line": 6, "column": 2}, "value": 3}
+        ]
+      }
+    }
+  }
+}
