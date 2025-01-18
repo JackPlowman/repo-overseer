@@ -6,6 +6,7 @@ import { GitPullRequest, Shield, ShieldAlert } from "lucide-react"
 type Repository = {
   name: string
   full_name: string
+  repository_link: string
   secret_scanning_push_protection: boolean
   secret_scanning: boolean
   dependabot_security_updates: boolean
@@ -15,9 +16,18 @@ export const columns: ColumnDef<Repository>[] = [
   {
     accessorKey: "name",
     header: "Repository",
-    cell: ({ row }) => (
-      <div className="font-medium">{row.getValue("name")}</div>
-    ),
+    cell: ({ row }) => {
+      return (
+        <a
+          href={row.original.repository_link}
+          className="text-primary hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {row.original.name}
+        </a>
+      )
+    },
   },
   {
     accessorKey: "secret_scanning_push_protection",
