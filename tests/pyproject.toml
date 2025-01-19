@@ -2,10 +2,10 @@
 name = "tests"
 dynamic = ["version"]
 requires-python = ">=3.13"
-dependencies = ["pytest==8.3.4", "pytest-playwright==0.6.2"]
+dependencies = ["pytest==8.3.4", "pytest-playwright==0.6.2", "requests==2.32.3"]
 
 [project.optional-dependencies]
-dev = ["zizmor==1.2.0", "ruff==0.9.2"]
+dev = ["zizmor==1.2.2", "ruff==0.9.2"]
 
 [tool.poetry]
 package-mode = false
@@ -26,7 +26,7 @@ ignore = [
   "PLR2004", # Ignore magic value
   "D104",    # Ignore missing docstring in public package
   "D100",    # Ignore missing docstring in public module
-  "SIM112",  # Ignore Lowercase environment variables (used for GitHub actions)
+  "S101",    # Ignore use of assert
 ]
 
 fixable = ["ALL"]
