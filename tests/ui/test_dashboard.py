@@ -45,19 +45,22 @@ def test_robots() -> None:
 
 
 def test_table_sorting(page: Page) -> None:
-    """Test that the repository table can be sorted in ascending and descending order."""
+    """Test that the repository table can be sorted in asc and dsc order."""
     # Arrange
     page.goto(DASHBOARD_URL)
-
+    # Wait for table to be loaded initially
+    page.wait_for_selector("tbody tr")
     # Get the repository column header button
     sort_button = page.get_by_role("button", name="Repository")
-
     # Act & Assert - First click (ascending)
     sort_button.click()
+    # Wait for sort to complete and get first cell
     first_repo = page.locator("tbody tr").first.locator("td").first
-    expect(first_repo).to_contain_text("aws-timing-scripts")
-
+    first_repo.wait_for(state="visible")
+    expect(first_repo).to_contain_text("aws-timing-scripts", timeout=5000)
     # Act & Assert - Second click (descending)
     sort_button.click()
+    # Wait for sort to complete and get first cell
     first_repo = page.locator("tbody tr").first.locator("td").first
-    expect(first_repo).to_contain_text("useful-commands")
+    first_repo.wait_for(state="visible")
+    expect(first_repo).to_contain_text("useful-commands", timeout=5000)
