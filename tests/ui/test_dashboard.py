@@ -42,3 +42,22 @@ def test_robots() -> None:
     assert response.status_code == 200
     assert response.headers["Content-Type"] == "text/plain; charset=utf-8"
     assert response.text == f"User-agent: *\nAllow: /\nSitemap: {SITEMAP_INDEX_URL}\n"
+
+
+def test_table_sorting(page: Page) -> None:
+    """Test that the repository table can be sorted in ascending and descending order."""
+    # Arrange
+    page.goto(DASHBOARD_URL)
+
+    # Get the repository column header button
+    sort_button = page.get_by_role("button", name="Repository")
+
+    # Act & Assert - First click (ascending)
+    sort_button.click()
+    first_repo = page.locator("tbody tr").first.locator("td").first
+    expect(first_repo).to_contain_text("aws-timing-scripts")
+
+    # Act & Assert - Second click (descending)
+    sort_button.click()
+    first_repo = page.locator("tbody tr").first.locator("td").first
+    expect(first_repo).to_contain_text("useful-commands")
