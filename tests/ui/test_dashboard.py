@@ -9,7 +9,7 @@ def test_has_title(page: Page) -> None:
     # Act
     page.goto(DASHBOARD_URL)
     # Assert
-    expect(page).to_have_title("Astro Basics")
+    expect(page).to_have_title("Repository Security Overview")
 
 
 def test_sitemap_index() -> None:
