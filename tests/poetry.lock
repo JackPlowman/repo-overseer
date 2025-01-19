@@ -509,4 +509,4 @@ dev = ["ruff", "zizmor"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.13"
-content-hash = "7143b97d9921aac402ee1744bad46bd7d75a365856c01fd0daad0ad438c8d950"
+content-hash = "d523572cdeb11469a247057d83d1f1fabcf5dd98d1c2f89361de4b69c5e97e94"
