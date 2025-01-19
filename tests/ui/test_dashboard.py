@@ -1,7 +1,7 @@
 from playwright.sync_api import Page, expect
 from requests import get
 
-from .utils.constants import DASHBOARD_URL, SITEMAP_0_URL, SITEMAP_INDEX_URL
+from .utils.constants import DASHBOARD_URL, ROBOTS_URL, SITEMAP_0_URL, SITEMAP_INDEX_URL
 
 
 def test_has_title(page: Page) -> None:
@@ -32,3 +32,13 @@ def test_sitemap() -> None:
     assert response.headers["Content-Type"] == "application/xml"
     assert response.text.startswith('<?xml version="1.0" encoding="UTF-8"?>')
     assert response.text.endswith("</urlset>")
+
+
+def test_robots() -> None:
+    """Check that the robots.txt is accessible."""
+    # Act
+    response = get(ROBOTS_URL, timeout=5)
+    # Assert
+    assert response.status_code == 200
+    assert response.headers["Content-Type"] == "text/plain; charset=utf-8"
+    assert response.text == f"User-agent: *\nAllow: /\nSitemap: {SITEMAP_INDEX_URL}\n"
