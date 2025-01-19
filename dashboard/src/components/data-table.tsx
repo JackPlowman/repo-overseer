@@ -5,9 +5,9 @@ import {
   flexRender,
   getCoreRowModel,
   getPaginationRowModel,
-  type SortingState,
   getSortedRowModel,
   useReactTable,
+  type SortingState,
 } from "@tanstack/react-table"
 
 import {

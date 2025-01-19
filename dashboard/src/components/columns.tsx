@@ -2,8 +2,7 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import type { ColumnDef } from "@tanstack/react-table"
-import { GitPullRequest, Shield, ShieldAlert } from "lucide-react"
-import { ArrowUpDown } from "lucide-react"
+import { ArrowUpDown, GitPullRequest, Shield, ShieldAlert } from "lucide-react"
 type Repository = {
   name: string
   full_name: string
