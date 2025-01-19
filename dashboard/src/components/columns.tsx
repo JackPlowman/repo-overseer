@@ -1,8 +1,9 @@
 "use client"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import type { ColumnDef } from "@tanstack/react-table"
 import { GitPullRequest, Shield, ShieldAlert } from "lucide-react"
-
+import { ArrowUpDown } from "lucide-react"
 type Repository = {
   name: string
   full_name: string
@@ -15,7 +16,17 @@ type Repository = {
 export const columns: ColumnDef<Repository>[] = [
   {
     accessorKey: "name",
-    header: "Repository",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Repository
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      )
+    },
     cell: ({ row }) => {
       return (
         <a
