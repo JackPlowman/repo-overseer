@@ -18,6 +18,10 @@ ui-tests:
 ui-tests-headed:
     poetry run pytest ui --headed
 
+# Validates Pyproject
+pyproject-check:
+    poetry check
+
 # ------------------------------------------------------------------------------
 # Ruff - Python Linting and Formating
 # Set up ruff red-knot when it's ready
