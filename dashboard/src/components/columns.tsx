@@ -41,11 +41,17 @@ export const columns: ColumnDef<Repository>[] = [
   },
   {
     accessorKey: "secret_scanning_push_protection",
-    header: () => (
-      <div className="flex items-center gap-2">
-        <ShieldAlert className="h-4 w-4" />
-        <span>Push Protection</span>
-      </div>
+    header: ({ column }) => (
+      <Button
+        variant="ghost"
+        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+      >
+        <div className="flex items-center gap-2">
+          <ShieldAlert className="h-4 w-4" />
+          <span>Push Protection</span>
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </div>
+      </Button>
     ),
     cell: ({ row }) => (
       <Badge
@@ -63,11 +69,17 @@ export const columns: ColumnDef<Repository>[] = [
   },
   {
     accessorKey: "secret_scanning",
-    header: () => (
-      <div className="flex items-center gap-2">
-        <Shield className="h-4 w-4" />
-        <span>Secret Scanning</span>
-      </div>
+    header: ({ column }) => (
+      <Button
+        variant="ghost"
+        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+      >
+        <div className="flex items-center gap-2">
+          <Shield className="h-4 w-4" />
+          <span>Secret Scanning</span>
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </div>
+      </Button>
     ),
     cell: ({ row }) => (
       <Badge
@@ -79,11 +91,17 @@ export const columns: ColumnDef<Repository>[] = [
   },
   {
     accessorKey: "dependabot_security_updates",
-    header: () => (
-      <div className="flex items-center gap-2">
-        <GitPullRequest className="h-4 w-4" />
-        <span>Dependabot</span>
-      </div>
+    header: ({ column }) => (
+      <Button
+        variant="ghost"
+        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+      >
+        <div className="flex items-center gap-2">
+          <GitPullRequest className="h-4 w-4" />
+          <span>Dependabot</span>
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </div>
+      </Button>
     ),
     cell: ({ row }) => (
       <Badge
