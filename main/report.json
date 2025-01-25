@@ -1,7 +1,7 @@
 {
   "version": "0.18.1",
-  "uuid": "63e494ed-0239-444d-8657-ce823e947358",
-  "timestamp": "2025-01-21T22:08:26+00:00",
+  "uuid": "561cf24d-3868-423a-a2ab-c7eade61a527",
+  "timestamp": "2025-01-25T22:41:13+00:00",
   "root": "/github/workspace",
   "repository": {
     "owner": "JackPlowman",
@@ -35,9 +35,9 @@
       "dashboard/": {
         "entries": [
           "prettier.config.js",
+          "eslint.config.js",
           "tailwind.config.mjs",
           "astro.config.mjs",
-          "eslint.config.js",
           "src/"
         ],
         "profile": [3, 0, 0, 0]
@@ -64,6 +64,14 @@
         "measurements": [
         ]
       },
+      "dashboard/eslint.config.js": {
+        "checksum": "1dd281002eb881275b8dbc21502b07a7",
+        "language": "JavaScript",
+        "loc": 0,
+        "profile": [0, 0, 0, 0],
+        "measurements": [
+        ]
+      },
       "dashboard/tailwind.config.mjs": {
         "checksum": "f352dab739fbca7de0ecb7b72f1fa538",
         "language": "JavaScript",
@@ -74,14 +82,6 @@
       },
       "dashboard/astro.config.mjs": {
         "checksum": "57a0a90dc980df02eeb5f68da079497c",
-        "language": "JavaScript",
-        "loc": 0,
-        "profile": [0, 0, 0, 0],
-        "measurements": [
-        ]
-      },
-      "dashboard/eslint.config.js": {
-        "checksum": "1dd281002eb881275b8dbc21502b07a7",
         "language": "JavaScript",
         "loc": 0,
         "profile": [0, 0, 0, 0],
