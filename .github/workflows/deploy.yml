@@ -58,7 +58,7 @@ jobs:
           name: validator-results
           path: dashboard/src/data
       - name: Install, build, and upload your site
-        uses: withastro/action@v3.0.1
+        uses: withastro/action@v3.0.2
         with:
           path: dashboard
 
