@@ -66,7 +66,7 @@ jobs:
       - name: Set up Node.js with Cache
         uses: actions/setup-node@v4.1.0
         with:
-          node-version: "23.5.0"
+          node-version-file: "dashboard/package.json"
           cache: "npm"
           cache-dependency-path: "dashboard/package-lock.json"
       - name: Set up Just
