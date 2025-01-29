@@ -7,7 +7,11 @@ const config = {
   tabWidth: 2,
   semi: false,
   singleQuote: false,
-  plugins: ["prettier-plugin-organize-imports", "prettier-plugin-astro"],
+  plugins: [
+    "prettier-plugin-organize-imports",
+    "prettier-plugin-astro",
+    "prettier-plugin-astro-organize-imports",
+  ],
   overrides: [
     {
       files: "*.astro",
