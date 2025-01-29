@@ -1,7 +1,7 @@
 {
   "version": "0.18.1",
-  "uuid": "50646215-d6e0-40d0-9ddc-6e3ae25e845b",
-  "timestamp": "2025-01-29T13:12:18+00:00",
+  "uuid": "e8acba38-db62-43c7-a4dc-a192c141740c",
+  "timestamp": "2025-01-29T20:13:14+00:00",
   "root": "/github/workspace",
   "repository": {
     "owner": "JackPlowman",
@@ -57,7 +57,7 @@
     },
     "files": {
       "dashboard/prettier.config.js": {
-        "checksum": "8117b17c53fa8fe10eac2285761c78db",
+        "checksum": "194d43a2ccc6681580fafd228b578791",
         "language": "JavaScript",
         "loc": 0,
         "profile": [0, 0, 0, 0],
