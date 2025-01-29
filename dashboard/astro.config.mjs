@@ -2,9 +2,8 @@
 import { defineConfig } from "astro/config"
 
 import react from "@astrojs/react"
-import tailwind from "@astrojs/tailwind"
 import robotsTxt from "astro-robots-txt"
-
+import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap"
 
 // https://astro.build/config
@@ -13,9 +12,9 @@ export default defineConfig({
   base: "repo-overseer",
   integrations: [
     react(),
-    tailwind({
-      applyBaseStyles: false,
-    }),
+    vite: {
+      plugins: [tailwindcss()],
+    },
     robotsTxt(),
     sitemap(),
   ],
