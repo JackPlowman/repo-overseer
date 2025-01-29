@@ -5,7 +5,7 @@ import { repositories } from "@/data/repositories.json"
 
 export default function RepositoryTable() {
   return (
-    <Tabs defaultValue="details"className="w-full">
+    <Tabs defaultValue="details" className="w-full">
       <TabsList>
         <TabsTrigger value="details">Details</TabsTrigger>
         <TabsTrigger value="security">Security</TabsTrigger>
