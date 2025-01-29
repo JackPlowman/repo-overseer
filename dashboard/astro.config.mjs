@@ -12,10 +12,10 @@ export default defineConfig({
   base: "repo-overseer",
   integrations: [
     react(),
-    vite: {
-      plugins: [tailwindcss()],
-    },
     robotsTxt(),
     sitemap(),
   ],
+  vite: {
+    plugins: [tailwindcss()],
+  },
 })
