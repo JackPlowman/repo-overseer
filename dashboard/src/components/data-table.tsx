@@ -39,7 +39,7 @@ export function DataTable<TData, TValue>({
     getPaginationRowModel: getPaginationRowModel(),
     initialState: {
       pagination: {
-        pageSize: 8,
+        pageSize: 12,
       },
     },
     onSortingChange: setSorting,
@@ -50,13 +50,13 @@ export function DataTable<TData, TValue>({
   })
 
   return (
-    <div data-oid="qa4mgng">
-      <Table data-oid="0q22gk7">
-        <TableHeader data-oid=":ufh-hf">
+    <div>
+      <Table>
+        <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id} data-oid="_bb6spf">
+            <TableRow key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
-                <TableHead key={header.id} data-oid="vszox0:">
+                <TableHead key={header.id}>
                   {header.isPlaceholder
                     ? null
                     : flexRender(
@@ -68,40 +68,32 @@ export function DataTable<TData, TValue>({
             </TableRow>
           ))}
         </TableHeader>
-        <TableBody data-oid="c4ufubr">
+        <TableBody>
           {table.getRowModel().rows?.length ? (
             table.getRowModel().rows.map((row) => (
-              <TableRow key={row.id} data-oid="alp5:um">
+              <TableRow key={row.id}>
                 {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id} data-oid="2f_zqbu">
+                  <TableCell key={cell.id}>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TableCell>
                 ))}
               </TableRow>
             ))
           ) : (
-            <TableRow data-oid="el7n3k7">
-              <TableCell
-                colSpan={columns.length}
-                className="h-24 text-center"
-                data-oid="0ycj-ei"
-              >
+            <TableRow>
+              <TableCell colSpan={columns.length} className="h-24 text-center">
                 No repositories found.
               </TableCell>
             </TableRow>
           )}
         </TableBody>
       </Table>
-      <div
-        className="flex items-center justify-end space-x-2 py-4"
-        data-oid=".oi0s4t"
-      >
+      <div className="flex items-center justify-end space-x-2 py-4">
         <Button
           variant="outline"
           size="sm"
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
-          data-oid="d:l-xkm"
         >
           Previous
         </Button>
@@ -110,7 +102,6 @@ export function DataTable<TData, TValue>({
           size="sm"
           onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage()}
-          data-oid="nlvwwn4"
         >
           Next
         </Button>
