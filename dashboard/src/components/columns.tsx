@@ -20,10 +20,9 @@ export const columns: ColumnDef<Repository>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          data-oid="mzy24.j"
         >
           Repository
-          <ArrowUpDown className="ml-2 h-4 w-4" data-oid="vrmdjdu" />
+          <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       )
     },
@@ -34,7 +33,6 @@ export const columns: ColumnDef<Repository>[] = [
           className="text-primary hover:underline"
           target="_blank"
           rel="noopener noreferrer"
-          data-oid="rbrxftz"
         >
           {row.original.name}
         </a>
@@ -47,12 +45,11 @@ export const columns: ColumnDef<Repository>[] = [
       <Button
         variant="ghost"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        data-oid="vc45.rx"
       >
-        <div className="flex items-center gap-2" data-oid="ilfoxue">
-          <ShieldAlert className="h-4 w-4" data-oid="c4d1:45" />
-          <span data-oid="99k9lox">Push Protection</span>
-          <ArrowUpDown className="ml-2 h-4 w-4" data-oid="xftjt86" />
+        <div className="flex items-center gap-2">
+          <ShieldAlert className="h-4 w-4" />
+          <span>Push Protection</span>
+          <ArrowUpDown className="ml-2 h-4 w-4" />
         </div>
       </Button>
     ),
@@ -64,7 +61,6 @@ export const columns: ColumnDef<Repository>[] = [
             ? "success"
             : "destructive"
         }
-        data-oid="72pk1fs"
       >
         {row.getValue("secret_scanning_push_protection")
           ? "Enabled"
@@ -78,12 +74,11 @@ export const columns: ColumnDef<Repository>[] = [
       <Button
         variant="ghost"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        data-oid="w5h7r72"
       >
-        <div className="flex items-center gap-2" data-oid="m1bkq7i">
-          <Shield className="h-4 w-4" data-oid="cq2:avt" />
-          <span data-oid="x2a4q_.">Secret Scanning</span>
-          <ArrowUpDown className="ml-2 h-4 w-4" data-oid="_ryk0st" />
+        <div className="flex items-center gap-2">
+          <Shield className="h-4 w-4" />
+          <span>Secret Scanning</span>
+          <ArrowUpDown className="ml-2 h-4 w-4" />
         </div>
       </Button>
     ),
@@ -91,7 +86,6 @@ export const columns: ColumnDef<Repository>[] = [
     cell: ({ row }) => (
       <Badge
         variant={row.getValue("secret_scanning") ? "success" : "destructive"}
-        data-oid="oobta2d"
       >
         {row.getValue("secret_scanning") ? "Enabled" : "Disabled"}
       </Badge>
@@ -103,12 +97,11 @@ export const columns: ColumnDef<Repository>[] = [
       <Button
         variant="ghost"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        data-oid="793p:2d"
       >
-        <div className="flex items-center gap-2" data-oid="_b1m5g2">
-          <GitPullRequest className="h-4 w-4" data-oid="qr3ftrv" />
-          <span data-oid="9e1-f2v">Dependabot</span>
-          <ArrowUpDown className="ml-2 h-4 w-4" data-oid="muz0bsd" />
+        <div className="flex items-center gap-2">
+          <GitPullRequest className="h-4 w-4" />
+          <span>Dependabot</span>
+          <ArrowUpDown className="ml-2 h-4 w-4" />
         </div>
       </Button>
     ),
@@ -120,7 +113,6 @@ export const columns: ColumnDef<Repository>[] = [
             ? "success"
             : "destructive"
         }
-        data-oid="79lcad:"
       >
         {row.getValue("dependabot_security_updates") ? "Enabled" : "Disabled"}
       </Badge>
