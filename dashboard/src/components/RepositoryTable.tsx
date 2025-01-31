@@ -1,9 +1,10 @@
-import { columns } from "@/components/columns"
 import { DataTable } from "@/components/data-table"
+import { RepositoryDetailColumns } from "@/components/RepositoryDetailColumns"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { repositories } from "@/data/repositories.json"
+import { RepositorySecurityColumns } from "./RepositorySecurityColumns"
 
-export default function RepositoryTable() {
+export default function RepositoryDetailTable() {
   return (
     <Tabs defaultValue="details" className="w-full">
       <TabsList>
@@ -11,9 +12,11 @@ export default function RepositoryTable() {
         <TabsTrigger value="security">Security</TabsTrigger>
       </TabsList>
       <TabsContent value="details">
-        <DataTable columns={columns} data={repositories} />
+        <DataTable columns={RepositoryDetailColumns} data={repositories} />
       </TabsContent>
-      <TabsContent value="security">Put content here</TabsContent>
+      <TabsContent value="security">
+        <DataTable columns={RepositorySecurityColumns} data={repositories} />
+      </TabsContent>
     </Tabs>
   )
 }

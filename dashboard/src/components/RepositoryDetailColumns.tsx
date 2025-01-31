@@ -12,7 +12,7 @@ type Repository = {
   dependabot_security_updates: boolean
 }
 
-export const columns: ColumnDef<Repository>[] = [
+export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
   {
     accessorKey: "name",
     header: ({ column }) => {
