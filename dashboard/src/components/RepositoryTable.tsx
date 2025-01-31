@@ -7,7 +7,7 @@ import { RepositorySecurityColumns } from "./RepositorySecurityColumns"
 export default function RepositoryDetailTable() {
   return (
     <Tabs defaultValue="details" className="w-full">
-      <TabsList>
+      <TabsList className="w-full">
         <TabsTrigger value="details">Details</TabsTrigger>
         <TabsTrigger value="security">Security</TabsTrigger>
       </TabsList>
