@@ -50,13 +50,13 @@ export function DataTable<TData, TValue>({
   })
 
   return (
-    <div>
-      <Table>
-        <TableHeader>
+    <div data-oid="qa4mgng">
+      <Table data-oid="0q22gk7">
+        <TableHeader data-oid=":ufh-hf">
           {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id}>
+            <TableRow key={headerGroup.id} data-oid="_bb6spf">
               {headerGroup.headers.map((header) => (
-                <TableHead key={header.id}>
+                <TableHead key={header.id} data-oid="vszox0:">
                   {header.isPlaceholder
                     ? null
                     : flexRender(
@@ -68,32 +68,40 @@ export function DataTable<TData, TValue>({
             </TableRow>
           ))}
         </TableHeader>
-        <TableBody>
+        <TableBody data-oid="c4ufubr">
           {table.getRowModel().rows?.length ? (
             table.getRowModel().rows.map((row) => (
-              <TableRow key={row.id}>
+              <TableRow key={row.id} data-oid="alp5:um">
                 {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id}>
+                  <TableCell key={cell.id} data-oid="2f_zqbu">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TableCell>
                 ))}
               </TableRow>
             ))
           ) : (
-            <TableRow>
-              <TableCell colSpan={columns.length} className="h-24 text-center">
+            <TableRow data-oid="el7n3k7">
+              <TableCell
+                colSpan={columns.length}
+                className="h-24 text-center"
+                data-oid="0ycj-ei"
+              >
                 No repositories found.
               </TableCell>
             </TableRow>
           )}
         </TableBody>
       </Table>
-      <div className="flex items-center justify-end space-x-2 py-4">
+      <div
+        className="flex items-center justify-end space-x-2 py-4"
+        data-oid=".oi0s4t"
+      >
         <Button
           variant="outline"
           size="sm"
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
+          data-oid="d:l-xkm"
         >
           Previous
         </Button>
@@ -102,6 +110,7 @@ export function DataTable<TData, TValue>({
           size="sm"
           onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage()}
+          data-oid="nlvwwn4"
         >
           Next
         </Button>
