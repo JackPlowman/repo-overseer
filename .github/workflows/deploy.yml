@@ -22,7 +22,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Set up Python 3.13
-        uses: actions/setup-python@v5.3.0
+        uses: actions/setup-python@v5.4.0
         with:
           python-version: 3.13
       - name: Install Poetry
@@ -58,7 +58,7 @@ jobs:
           name: validator-results
           path: dashboard/src/data
       - name: Install, build, and upload your site
-        uses: withastro/action@v3.0.1
+        uses: withastro/action@v3.0.2
         with:
           path: dashboard
 
@@ -89,7 +89,7 @@ jobs:
       - name: Set up Just
         uses: extractions/setup-just@v2
       - name: Set up Python 3.13
-        uses: actions/setup-python@v5.3.0
+        uses: actions/setup-python@v5.4.0
         with:
           python-version: 3.13
       - name: Install Poetry
