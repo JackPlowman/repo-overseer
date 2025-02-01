@@ -1,16 +1,9 @@
 "use client"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import type { Repository } from "@/lib/types"
 import type { ColumnDef } from "@tanstack/react-table"
 import { ArrowUpDown, GitPullRequest, Shield, ShieldAlert } from "lucide-react"
-export type Repository = {
-  name: string
-  full_name: string
-  repository_link: string
-  secret_scanning_push_protection: boolean
-  secret_scanning: boolean
-  dependabot_security_updates: boolean
-}
 
 export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
   {
