@@ -3,12 +3,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import type { Repository } from "@/lib/types"
 import type { ColumnDef } from "@tanstack/react-table"
-import {
-  ArrowUpDown,
-  CheckIcon,
-  CrossIcon,
-  ShieldAlert,
-} from "lucide-react"
+import { ArrowUpDown, CheckIcon, CrossIcon, ShieldAlert } from "lucide-react"
 
 export const GreenCheckIcon = () => (
   <CheckIcon className="h-4 w-4 text-green-500" />
@@ -53,11 +48,7 @@ export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
 
     cell: ({ row }) => (
       <Badge variant="secondary">
-        {row.getValue("has_license") ? (
-          <GreenCheckIcon />
-        ) : (
-          <RedCrossIcon />
-        )}
+        {row.getValue("has_license") ? <GreenCheckIcon /> : <RedCrossIcon />}
       </Badge>
     ),
   },
@@ -75,11 +66,7 @@ export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
 
     cell: ({ row }) => (
       <Badge variant="secondary">
-        {row.getValue("has_readme") ? (
-          <GreenCheckIcon />
-        ) : (
-          <RedCrossIcon />
-        )}
+        {row.getValue("has_readme") ? <GreenCheckIcon /> : <RedCrossIcon />}
       </Badge>
     ),
   },
