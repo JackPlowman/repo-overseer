@@ -1,6 +1,5 @@
 name: "Setup Test Dependencies"
-description: "Installs python test dependencies for the project"
-
+description: "Installs Chrome and Playwright dependencies for the project"
 runs:
   using: "composite"
   steps:
