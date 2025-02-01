@@ -3,7 +3,13 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import type { Repository } from "@/lib/types"
 import type { ColumnDef } from "@tanstack/react-table"
-import { ArrowUpDown, GitPullRequest, Shield, ShieldAlert, MessageCircleWarning } from "lucide-react"
+import {
+  ArrowUpDown,
+  GitPullRequest,
+  MessageCircleWarning,
+  Shield,
+  ShieldAlert,
+} from "lucide-react"
 
 export const RepositorySecurityColumns: ColumnDef<Repository>[] = [
   {
@@ -134,7 +140,9 @@ export const RepositorySecurityColumns: ColumnDef<Repository>[] = [
             : "destructive"
         }
       >
-        {row.getValue("private_vulnerability_disclosures") ? "Enabled" : "Disabled"}
+        {row.getValue("private_vulnerability_disclosures")
+          ? "Enabled"
+          : "Disabled"}
       </Badge>
     ),
   },
@@ -156,9 +164,7 @@ export const RepositorySecurityColumns: ColumnDef<Repository>[] = [
     cell: ({ row }) => (
       <Badge
         variant={
-          row.getValue("code_scanning_alerts") === 0
-        ? "success"
-        : "destructive"
+          row.getValue("code_scanning_alerts") === 0 ? "success" : "destructive"
         }
       >
         {row.getValue("code_scanning_alerts")}

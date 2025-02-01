@@ -24,5 +24,6 @@ export type RepositoryHasFiles = {
   has_license: boolean
 }
 
-export type FlatSecurityRepositoryDetails = Repository & RepositorySecurityDetails
+export type FlatSecurityRepositoryDetails = Repository &
+  RepositorySecurityDetails
 export type FlatRepositoryDetails = Repository & RepositoryHasFiles

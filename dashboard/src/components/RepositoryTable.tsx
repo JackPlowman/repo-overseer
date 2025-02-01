@@ -17,8 +17,7 @@ const sortedFlatRepositories = repositories.map((repository) => {
     ...repository.repository_security_details,
     ...repository.repository_has_files,
   }
-}
-)
+})
 
 export default function RepositoryDetailTable() {
   return (
