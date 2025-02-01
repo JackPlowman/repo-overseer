@@ -221,7 +221,7 @@ jobs:
         with:
           python-version: 3.13
       - name: Install Poetry
-        run: pipx install poetry==2.0.0
+        run: pipx install poetry==2.0.1
       - name: Install dependencies
         run: just tests::install
       - name: Run zizmor 🌈
