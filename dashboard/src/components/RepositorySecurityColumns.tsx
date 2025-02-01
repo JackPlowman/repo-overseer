@@ -49,10 +49,11 @@ export const RepositorySecurityColumns: ColumnDef<Repository>[] = [
 
     cell: ({ row }) => (
       <Badge
-        variant={
+        variant="default"
+        className={
           row.getValue("secret_scanning_push_protection")
-            ? "success"
-            : "destructive"
+            ? "bg-green-400"
+            : "bg-red-400"
         }
       >
         {row.getValue("secret_scanning_push_protection")
@@ -75,7 +76,10 @@ export const RepositorySecurityColumns: ColumnDef<Repository>[] = [
 
     cell: ({ row }) => (
       <Badge
-        variant={row.getValue("secret_scanning") ? "success" : "destructive"}
+        variant="default"
+        className={
+          row.getValue("secret_scanning") ? "bg-green-400" : "bg-red-400"
+        }
       >
         {row.getValue("secret_scanning") ? "Enabled" : "Disabled"}
       </Badge>
@@ -95,10 +99,10 @@ export const RepositorySecurityColumns: ColumnDef<Repository>[] = [
 
     cell: ({ row }) => (
       <Badge
-        variant={
+        className={
           row.getValue("dependabot_security_updates")
-            ? "success"
-            : "destructive"
+            ? "bg-green-400"
+            : "bg-red-400"
         }
       >
         {row.getValue("dependabot_security_updates") ? "Enabled" : "Disabled"}
@@ -119,10 +123,10 @@ export const RepositorySecurityColumns: ColumnDef<Repository>[] = [
 
     cell: ({ row }) => (
       <Badge
-        variant={
+        className={
           row.getValue("private_vulnerability_disclosures")
-            ? "success"
-            : "destructive"
+            ? "bg-green-400"
+            : "bg-red-400"
         }
       >
         {row.getValue("private_vulnerability_disclosures")
@@ -145,8 +149,10 @@ export const RepositorySecurityColumns: ColumnDef<Repository>[] = [
 
     cell: ({ row }) => (
       <Badge
-        variant={
-          row.getValue("code_scanning_alerts") === 0 ? "success" : "destructive"
+        className={
+          row.getValue("code_scanning_alerts") === 0
+            ? "bg-green-400"
+            : "bg-red-400"
         }
       >
         {row.getValue("code_scanning_alerts")}

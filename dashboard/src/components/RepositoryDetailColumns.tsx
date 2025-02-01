@@ -3,18 +3,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import type { Repository } from "@/lib/types"
 import type { ColumnDef } from "@tanstack/react-table"
-import {
-  ArrowUpDown,
-  CheckIcon,
-  CircleDot,
-  CrossIcon,
-  GitPullRequest,
-} from "lucide-react"
-
-export const GreenCheckIcon = () => (
-  <CheckIcon className="h-4 w-4 text-green-500" />
-)
-export const RedCrossIcon = () => <CrossIcon className="h-4 w-4 text-red-500" />
+import { ArrowUpDown, CircleDot, GitPullRequest } from "lucide-react"
 
 export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
   {
@@ -52,7 +41,17 @@ export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
       </Button>
     ),
     cell: ({ row }) => (
-      <Badge variant="default">{row.getValue("open_pull_requests")}</Badge>
+      <Badge
+        variant="default"
+        className={
+          row.getValue("open_pull_requests") > 3
+            ? "bg-amber-600"
+            : "bg-green-600"
+        }
+      >
+        {/*  */}
+        {row.getValue("open_pull_requests")}
+      </Badge>
     ),
   },
   {
@@ -67,7 +66,16 @@ export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
       </Button>
     ),
     cell: ({ row }) => (
-      <Badge variant="default">{row.getValue("open_issues")}</Badge>
+      <Badge
+        variant="default"
+        className={
+          row.getValue("open_pull_requests") > 3
+            ? "bg-amber-600"
+            : "bg-green-600"
+        }
+      >
+        {row.getValue("open_issues")}
+      </Badge>
     ),
   },
 ]

@@ -3,12 +3,12 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import type { Repository } from "@/lib/types"
 import type { ColumnDef } from "@tanstack/react-table"
-import { ArrowUpDown, CheckIcon, CrossIcon, ShieldAlert } from "lucide-react"
+import { ArrowUpDown, CheckIcon, ShieldAlert, X } from "lucide-react"
 
 export const GreenCheckIcon = () => (
-  <CheckIcon className="h-4 w-4 text-green-500" />
+  <CheckIcon className="h-6 w-6 text-green-500" />
 )
-export const RedCrossIcon = () => <CrossIcon className="h-4 w-4 text-red-500" />
+export const RedCrossIcon = () => <X className="h-6 w-6 text-red-500" />
 
 export const RepositoryKeyFileColumns: ColumnDef<Repository>[] = [
   {
