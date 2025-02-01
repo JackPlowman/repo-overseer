@@ -11,7 +11,7 @@ const sortRepository = (a: Repository, b: Repository) => {
 
 const sortedRepositories = repositories.sort(sortRepository)
 
-const sortedFlatRepositories = repositories.map((repository) => {
+const sortedFlatRepositories = sortedRepositories.map((repository) => {
   return {
     ...repository,
     ...repository.repository_security_details,
