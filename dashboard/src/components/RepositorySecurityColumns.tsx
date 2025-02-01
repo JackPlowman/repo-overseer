@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import type { Repository } from "@/lib/types"
 import type { ColumnDef } from "@tanstack/react-table"
-import { ArrowUpDown, GitPullRequest, Shield, ShieldAlert } from "lucide-react"
+import { ArrowUpDown, GitPullRequest, Shield, ShieldAlert, MessageCircleWarning } from "lucide-react"
 
 export const RepositorySecurityColumns: ColumnDef<Repository>[] = [
   {
@@ -108,6 +108,60 @@ export const RepositorySecurityColumns: ColumnDef<Repository>[] = [
         }
       >
         {row.getValue("dependabot_security_updates") ? "Enabled" : "Disabled"}
+      </Badge>
+    ),
+  },
+  {
+    accessorKey: "private_vulnerability_disclosures",
+    header: ({ column }) => (
+      <Button
+        variant="ghost"
+        onClick={() => column.toggleSorting(column.getIsSorted() === "desc")}
+      >
+        <div className="flex items-center gap-2">
+          <MessageCircleWarning className="h-4 w-4" />
+          <span>Private Vulnerability Disclosures</span>
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </div>
+      </Button>
+    ),
+
+    cell: ({ row }) => (
+      <Badge
+        variant={
+          row.getValue("private_vulnerability_disclosures")
+            ? "success"
+            : "destructive"
+        }
+      >
+        {row.getValue("private_vulnerability_disclosures") ? "Enabled" : "Disabled"}
+      </Badge>
+    ),
+  },
+  {
+    accessorKey: "code_scanning_alerts",
+    header: ({ column }) => (
+      <Button
+        variant="ghost"
+        onClick={() => column.toggleSorting(column.getIsSorted() === "desc")}
+      >
+        <div className="flex items-center gap-2">
+          <MessageCircleWarning className="h-4 w-4" />
+          <span>Code Scanning Alerts</span>
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </div>
+      </Button>
+    ),
+
+    cell: ({ row }) => (
+      <Badge
+        variant={
+          row.getValue("code_scanning_alerts") === 0
+        ? "success"
+        : "destructive"
+        }
+      >
+        {row.getValue("code_scanning_alerts")}
       </Badge>
     ),
   },

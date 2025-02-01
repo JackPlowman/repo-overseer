@@ -11,6 +11,15 @@ const sortRepository = (a: Repository, b: Repository) => {
 
 const sortedRepositories = repositories.sort(sortRepository)
 
+const sortedFlatRepositories = repositories.map((repository) => {
+  return {
+    ...repository,
+    ...repository.repository_security_details,
+    ...repository.repository_has_files,
+  }
+}
+)
+
 export default function RepositoryDetailTable() {
   return (
     <Tabs defaultValue="details" className="w-full">
@@ -21,13 +30,13 @@ export default function RepositoryDetailTable() {
       <TabsContent value="details">
         <DataTable
           columns={RepositoryDetailColumns}
-          data={sortedRepositories}
+          data={sortedFlatRepositories}
         />
       </TabsContent>
       <TabsContent value="security">
         <DataTable
           columns={RepositorySecurityColumns}
-          data={sortedRepositories}
+          data={sortedFlatRepositories}
         />
       </TabsContent>
     </Tabs>
