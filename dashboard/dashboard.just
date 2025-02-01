@@ -2,6 +2,26 @@
 # General Commands
 # ------------------------------------------------------------------------------
 
+# Install dependencies
+install:
+    npm install
+
+# Install CI dependencies
+install-ci:
+    npm ci
+
+# Dev server
+dev:
+    npm run dev
+
+# Build
+build:
+    npm run build
+
+# Preview production build
+preview:
+    npm run preview
+
 # Lint typescript code with ESLint
 lint:
     npx eslint .
