@@ -17,7 +17,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4.2.2
         with:
-          ref: "6a9ac2cfb2c017ea99917ad9744af42fb8610fda"
+          ref: "main"
           repository: JackPlowman/repo_standards_validator
           fetch-depth: 0
           persist-credentials: false
