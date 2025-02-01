@@ -2,16 +2,9 @@ import { DataTable } from "@/components/data-table"
 import { RepositoryDetailColumns } from "@/components/RepositoryDetailColumns"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { repositories } from "@/data/repositories.json"
-import { type Repository } from "@/lib/types"
 import { RepositorySecurityColumns } from "./RepositorySecurityColumns"
 
-const sortRepository = (a: Repository, b: Repository) => {
-  return a.name.localeCompare(b.name)
-}
-
-const sortedRepositories = repositories.sort(sortRepository)
-
-const sortedFlatRepositories = sortedRepositories.map((repository) => {
+const sortedFlatRepositories = repositories.map((repository) => {
   return {
     ...repository,
     ...repository.repository_security_details,

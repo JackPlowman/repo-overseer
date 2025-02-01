@@ -41,6 +41,12 @@ export function DataTable<TData, TValue>({
       pagination: {
         pageSize: 12,
       },
+      sorting: [
+        {
+          id: "name",
+          desc: false, // sort by name in ascending order by default
+        },
+      ],
     },
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
