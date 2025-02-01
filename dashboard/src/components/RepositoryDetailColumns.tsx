@@ -7,8 +7,6 @@ import {
   ArrowUpDown,
   CheckIcon,
   CrossIcon,
-  GitPullRequest,
-  Shield,
   ShieldAlert,
 } from "lucide-react"
 
