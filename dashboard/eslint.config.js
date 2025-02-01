@@ -1,6 +1,7 @@
 import pluginJs from "@eslint/js"
 import eslintConfigPrettier from "eslint-config-prettier"
 import eslintPluginAstro from "eslint-plugin-astro"
+import jsxA11y from "eslint-plugin-jsx-a11y"
 import pluginReact from "eslint-plugin-react"
 import globals from "globals"
 import tseslint from "typescript-eslint"
@@ -13,6 +14,7 @@ export default [
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
   ...eslintPluginAstro.configs.recommended,
+  jsxA11y.flatConfigs.recommended,
   {
     rules: {
       "react/react-in-jsx-scope": "off",
