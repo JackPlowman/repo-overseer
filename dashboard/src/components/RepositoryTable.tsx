@@ -2,7 +2,6 @@ import { DataTable } from "@/components/data-table"
 import { RepositoryDetailColumns } from "@/components/RepositoryDetailColumns"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { repositories } from "@/data/repositories.json"
-import { type Repository } from "@/lib/types"
 import { RepositorySecurityColumns } from "./RepositorySecurityColumns"
 
 const sortedFlatRepositories = repositories.map((repository) => {

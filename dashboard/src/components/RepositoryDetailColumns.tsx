@@ -10,10 +10,7 @@ export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
     accessorKey: "name",
     header: ({ column }) => {
       return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting()}
-        >
+        <Button variant="ghost" onClick={() => column.toggleSorting()}>
           Repository
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
@@ -35,10 +32,7 @@ export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
   {
     accessorKey: "secret_scanning_push_protection",
     header: ({ column }) => (
-      <Button
-        variant="ghost"
-        onClick={() => column.toggleSorting()}
-      >
+      <Button variant="ghost" onClick={() => column.toggleSorting()}>
         <div className="flex items-center gap-2">
           <ShieldAlert className="h-4 w-4" />
           <span>Push Protection</span>
@@ -64,10 +58,7 @@ export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
   {
     accessorKey: "secret_scanning",
     header: ({ column }) => (
-      <Button
-        variant="ghost"
-        onClick={() => column.toggleSorting()}
-      >
+      <Button variant="ghost" onClick={() => column.toggleSorting()}>
         <div className="flex items-center gap-2">
           <Shield className="h-4 w-4" />
           <span>Secret Scanning</span>
@@ -87,10 +78,7 @@ export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
   {
     accessorKey: "dependabot_security_updates",
     header: ({ column }) => (
-      <Button
-        variant="ghost"
-        onClick={() => column.toggleSorting()}
-      >
+      <Button variant="ghost" onClick={() => column.toggleSorting()}>
         <div className="flex items-center gap-2">
           <GitPullRequest className="h-4 w-4" />
           <span>Dependabot</span>
