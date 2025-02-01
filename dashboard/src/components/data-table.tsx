@@ -44,7 +44,7 @@ export function DataTable<TData, TValue>({
       sorting: [
         {
           id: "name",
-          desc: false, // sort by name in descending order by default
+          desc: false, // sort by name in ascending order by default
         },
       ],
     },
