@@ -5,4 +5,5 @@ export type Repository = {
   secret_scanning_push_protection: boolean
   secret_scanning: boolean
   dependabot_security_updates: boolean
+  
 }
