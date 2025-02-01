@@ -66,12 +66,16 @@ export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
       </Button>
     ),
     cell: ({ row }) => (
-      <Badge variant="default" className={
-        row.getValue("open_pull_requests") > 3
-          ? "bg-amber-600"
-          : "bg-green-600"
-      }
-      >{row.getValue("open_issues")}</Badge>
+      <Badge
+        variant="default"
+        className={
+          row.getValue("open_pull_requests") > 3
+            ? "bg-amber-600"
+            : "bg-green-600"
+        }
+      >
+        {row.getValue("open_issues")}
+      </Badge>
     ),
   },
 ]

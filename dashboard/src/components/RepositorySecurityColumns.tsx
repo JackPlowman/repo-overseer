@@ -52,7 +52,8 @@ export const RepositorySecurityColumns: ColumnDef<Repository>[] = [
         variant="default"
         className={
           row.getValue("secret_scanning_push_protection")
-            ? "bg-green-400" : "bg-red-400"
+            ? "bg-green-400"
+            : "bg-red-400"
         }
       >
         {row.getValue("secret_scanning_push_protection")
@@ -75,11 +76,10 @@ export const RepositorySecurityColumns: ColumnDef<Repository>[] = [
 
     cell: ({ row }) => (
       <Badge
-      variant="default"
-      className={
-        row.getValue("secret_scanning")
-          ? "bg-green-400" : "bg-red-400"
-      }
+        variant="default"
+        className={
+          row.getValue("secret_scanning") ? "bg-green-400" : "bg-red-400"
+        }
       >
         {row.getValue("secret_scanning") ? "Enabled" : "Disabled"}
       </Badge>
@@ -99,10 +99,11 @@ export const RepositorySecurityColumns: ColumnDef<Repository>[] = [
 
     cell: ({ row }) => (
       <Badge
-      className={
-        row.getValue("dependabot_security_updates")
-          ? "bg-green-400" : "bg-red-400"
-      }
+        className={
+          row.getValue("dependabot_security_updates")
+            ? "bg-green-400"
+            : "bg-red-400"
+        }
       >
         {row.getValue("dependabot_security_updates") ? "Enabled" : "Disabled"}
       </Badge>
@@ -122,10 +123,11 @@ export const RepositorySecurityColumns: ColumnDef<Repository>[] = [
 
     cell: ({ row }) => (
       <Badge
-      className={
-        row.getValue("private_vulnerability_disclosures")
-          ? "bg-green-400" : "bg-red-400"
-      }
+        className={
+          row.getValue("private_vulnerability_disclosures")
+            ? "bg-green-400"
+            : "bg-red-400"
+        }
       >
         {row.getValue("private_vulnerability_disclosures")
           ? "Enabled"
@@ -147,11 +149,11 @@ export const RepositorySecurityColumns: ColumnDef<Repository>[] = [
 
     cell: ({ row }) => (
       <Badge
-      className={
-        row.getValue("code_scanning_alerts") === 0
-          ? "bg-green-400" : "bg-red-400"
-      }
-
+        className={
+          row.getValue("code_scanning_alerts") === 0
+            ? "bg-green-400"
+            : "bg-red-400"
+        }
       >
         {row.getValue("code_scanning_alerts")}
       </Badge>
