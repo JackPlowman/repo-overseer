@@ -1,0 +1,19 @@
+name: "Setup Python Dependencies"
+description: "Installs python dependencies for the project"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up Just
+      uses: extractions/setup-just@v2
+    - name: Install Poetry
+      shell: bash
+      run: pipx install poetry==2.0.1
+    - name: Install Python 3.13 with Poetry Cache
+      uses: actions/setup-python@v5.4.0
+      with:
+        python-version-file: "tests/pyproject.toml"
+        cache: "poetry"
+    - name: Install Poetry Dependencies
+      shell: bash
+      run: just tests::install
