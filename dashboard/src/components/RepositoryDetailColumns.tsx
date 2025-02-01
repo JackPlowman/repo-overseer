@@ -3,7 +3,13 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import type { Repository } from "@/lib/types"
 import type { ColumnDef } from "@tanstack/react-table"
-import { ArrowUpDown, CheckIcon, CrossIcon, GitPullRequest,  CircleDot} from "lucide-react"
+import {
+  ArrowUpDown,
+  CheckIcon,
+  CircleDot,
+  CrossIcon,
+  GitPullRequest,
+} from "lucide-react"
 
 export const GreenCheckIcon = () => (
   <CheckIcon className="h-4 w-4 text-green-500" />
