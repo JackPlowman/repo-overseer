@@ -3,7 +3,19 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import type { Repository } from "@/lib/types"
 import type { ColumnDef } from "@tanstack/react-table"
-import { ArrowUpDown, GitPullRequest, Shield, ShieldAlert } from "lucide-react"
+import {
+  ArrowUpDown,
+  CheckIcon,
+  CrossIcon,
+  GitPullRequest,
+  Shield,
+  ShieldAlert,
+} from "lucide-react"
+
+export const GreenCheckIcon = () => (
+  <CheckIcon className="h-4 w-4 text-green-500" />
+)
+export const RedCrossIcon = () => <CrossIcon className="h-4 w-4 text-red-500" />
 
 export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
   {
@@ -30,72 +42,134 @@ export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
     },
   },
   {
-    accessorKey: "secret_scanning_push_protection",
+    accessorKey: "has_license",
     header: ({ column }) => (
       <Button variant="ghost" onClick={() => column.toggleSorting()}>
         <div className="flex items-center gap-2">
           <ShieldAlert className="h-4 w-4" />
-          <span>Push Protection</span>
+          <span>License</span>
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </div>
       </Button>
     ),
 
     cell: ({ row }) => (
-      <Badge
-        variant={
-          row.getValue("secret_scanning_push_protection")
-            ? "success"
-            : "destructive"
-        }
-      >
-        {row.getValue("secret_scanning_push_protection")
-          ? "Enabled"
-          : "Disabled"}
+      <Badge variant="secondary">
+        {row.getValue("has_license") ? (
+          <GreenCheckIcon />
+        ) : (
+          <RedCrossIcon />
+        )}
       </Badge>
     ),
   },
   {
-    accessorKey: "secret_scanning",
+    accessorKey: "has_readme",
     header: ({ column }) => (
       <Button variant="ghost" onClick={() => column.toggleSorting()}>
         <div className="flex items-center gap-2">
-          <Shield className="h-4 w-4" />
-          <span>Secret Scanning</span>
+          <ShieldAlert className="h-4 w-4" />
+          <span>Readme</span>
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </div>
       </Button>
     ),
 
     cell: ({ row }) => (
-      <Badge
-        variant={row.getValue("secret_scanning") ? "success" : "destructive"}
-      >
-        {row.getValue("secret_scanning") ? "Enabled" : "Disabled"}
+      <Badge variant="secondary">
+        {row.getValue("has_readme") ? (
+          <GreenCheckIcon />
+        ) : (
+          <RedCrossIcon />
+        )}
       </Badge>
     ),
   },
   {
-    accessorKey: "dependabot_security_updates",
+    accessorKey: "has_security_policy",
     header: ({ column }) => (
       <Button variant="ghost" onClick={() => column.toggleSorting()}>
         <div className="flex items-center gap-2">
-          <GitPullRequest className="h-4 w-4" />
-          <span>Dependabot</span>
+          <ShieldAlert className="h-4 w-4" />
+          <span>Security Policy</span>
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </div>
       </Button>
     ),
 
     cell: ({ row }) => (
-      <Badge
-        variant={
-          row.getValue("dependabot_security_updates")
-            ? "success"
-            : "destructive"
-        }
-      >
-        {row.getValue("dependabot_security_updates") ? "Enabled" : "Disabled"}
+      <Badge variant="secondary">
+        {row.getValue("has_security_policy") ? (
+          <GreenCheckIcon />
+        ) : (
+          <RedCrossIcon />
+        )}
+      </Badge>
+    ),
+  },
+  {
+    accessorKey: "has_code_of_conduct",
+    header: ({ column }) => (
+      <Button variant="ghost" onClick={() => column.toggleSorting()}>
+        <div className="flex items-center gap-2">
+          <ShieldAlert className="h-4 w-4" />
+          <span>Code of Conduct</span>
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </div>
+      </Button>
+    ),
+
+    cell: ({ row }) => (
+      <Badge variant="secondary">
+        {row.getValue("has_code_of_conduct") ? (
+          <GreenCheckIcon />
+        ) : (
+          <RedCrossIcon />
+        )}
+      </Badge>
+    ),
+  },
+  {
+    accessorKey: "has_contributing",
+    header: ({ column }) => (
+      <Button variant="ghost" onClick={() => column.toggleSorting()}>
+        <div className="flex items-center gap-2">
+          <ShieldAlert className="h-4 w-4" />
+          <span>Contributing</span>
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </div>
+      </Button>
+    ),
+
+    cell: ({ row }) => (
+      <Badge variant="secondary">
+        {row.getValue("has_contributing") ? (
+          <GreenCheckIcon />
+        ) : (
+          <RedCrossIcon />
+        )}
+      </Badge>
+    ),
+  },
+  {
+    accessorKey: "has_project_technologies",
+    header: ({ column }) => (
+      <Button variant="ghost" onClick={() => column.toggleSorting()}>
+        <div className="flex items-center gap-2">
+          <ShieldAlert className="h-4 w-4" />
+          <span>Project Technologies</span>
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </div>
+      </Button>
+    ),
+
+    cell: ({ row }) => (
+      <Badge variant="secondary">
+        {row.getValue("has_project_technologies") ? (
+          <GreenCheckIcon />
+        ) : (
+          <RedCrossIcon />
+        )}
       </Badge>
     ),
   },
