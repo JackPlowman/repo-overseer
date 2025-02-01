@@ -5,13 +5,7 @@ import { repositories } from "@/data/repositories.json"
 import { type Repository } from "@/lib/types"
 import { RepositorySecurityColumns } from "./RepositorySecurityColumns"
 
-const sortRepository = (a: Repository, b: Repository) => {
-  return a.name.localeCompare(b.name)
-}
-
-const sortedRepositories = repositories.sort(sortRepository)
-
-const sortedFlatRepositories = sortedRepositories.map((repository) => {
+const sortedFlatRepositories = repositories.map((repository) => {
   return {
     ...repository,
     ...repository.repository_security_details,

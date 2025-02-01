@@ -12,7 +12,7 @@ export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
       return (
         <Button
           variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "desc")}
+          onClick={() => column.toggleSorting()}
         >
           Repository
           <ArrowUpDown className="ml-2 h-4 w-4" />
@@ -37,7 +37,7 @@ export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
     header: ({ column }) => (
       <Button
         variant="ghost"
-        onClick={() => column.toggleSorting(column.getIsSorted() === "desc")}
+        onClick={() => column.toggleSorting()}
       >
         <div className="flex items-center gap-2">
           <ShieldAlert className="h-4 w-4" />
@@ -66,7 +66,7 @@ export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
     header: ({ column }) => (
       <Button
         variant="ghost"
-        onClick={() => column.toggleSorting(column.getIsSorted() === "desc")}
+        onClick={() => column.toggleSorting()}
       >
         <div className="flex items-center gap-2">
           <Shield className="h-4 w-4" />
@@ -89,7 +89,7 @@ export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
     header: ({ column }) => (
       <Button
         variant="ghost"
-        onClick={() => column.toggleSorting(column.getIsSorted() === "desc")}
+        onClick={() => column.toggleSorting()}
       >
         <div className="flex items-center gap-2">
           <GitPullRequest className="h-4 w-4" />
