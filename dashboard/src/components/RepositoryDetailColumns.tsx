@@ -69,7 +69,7 @@ export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
       <Badge
         variant="default"
         className={
-          row.getValue("open_pull_requests") > 3
+          row.getValue("open_issues") > 3
             ? "bg-amber-600"
             : "bg-green-600"
         }
