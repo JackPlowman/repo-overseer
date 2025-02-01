@@ -1,7 +1,7 @@
 {
   "version": "0.18.1",
-  "uuid": "78a29b56-ed0f-491d-8e96-75da54e9484a",
-  "timestamp": "2025-02-01T11:22:16+00:00",
+  "uuid": "fc20a1b3-b476-430d-b2f1-08aed5df719d",
+  "timestamp": "2025-02-01T11:36:12+00:00",
   "root": "/github/workspace",
   "repository": {
     "owner": "JackPlowman",
@@ -18,7 +18,7 @@
         "unmaintainable": 0
       },
       "TypeScript": {
-        "files": 1,
+        "files": 2,
         "lines_of_code": 3,
         "functions": 1,
         "hard_to_maintain": 0,
@@ -43,7 +43,8 @@
       },
       "dashboard/src/lib/": {
         "entries": [
-          "utils.ts"
+          "utils.ts",
+          "types.ts"
         ],
         "profile": [3, 0, 0, 0]
       },
@@ -86,6 +87,14 @@
         "profile": [3, 0, 0, 0],
         "measurements": [
           {"unit_name": "cn", "start": {"line": 4, "column": 17}, "end": {"line": 6, "column": 2}, "value": 3}
+        ]
+      },
+      "dashboard/src/lib/types.ts": {
+        "checksum": "1db43b536ec5cb1162cd38fa5ea43d44",
+        "language": "TypeScript",
+        "loc": 0,
+        "profile": [0, 0, 0, 0],
+        "measurements": [
         ]
       }
     }
