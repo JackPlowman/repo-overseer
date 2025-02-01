@@ -1,0 +1,15 @@
+name: "Setup Test Dependencies"
+description: "Installs python test dependencies for the project"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up Chrome
+      uses: browser-actions/setup-chrome@v1.7.3
+      with:
+        chrome-version: 132
+        install-chromedriver: true
+        install-dependencies: true
+    - name: Install Playwright Dependencies
+      shell: bash
+      run: just tests::playwright-install

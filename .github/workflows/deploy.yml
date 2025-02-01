@@ -86,18 +86,10 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - name: Set up Just
-        uses: extractions/setup-just@v2
-      - name: Set up Python 3.13
-        uses: actions/setup-python@v5.4.0
-        with:
-          python-version: 3.13
-      - name: Install Poetry
-        run: pipx install poetry==2.0.1
-      - name: Install dependencies
-        run: just tests::install
-      - name: Install Playwright Dependencies
-        run: just tests::playwright-install
+      - name: Set up Python Dependencies
+        uses: ./.github/actions/setup-python-dependencies
+      - name: Set up Chrome Dependencies
+        uses: ./.github/actions/setup-chrome-dependencies
       - name: Run UI Tests
         run: just tests::ui-tests
 

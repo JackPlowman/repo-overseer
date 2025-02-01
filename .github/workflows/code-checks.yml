@@ -96,21 +96,13 @@ jobs:
       statuses: write
       security-events: write
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4.2.2
         with:
           fetch-depth: 0
           persist-credentials: false
-      - name: Set up Just
-        uses: extractions/setup-just@v2
-      - name: Set up Python 3.13
-        uses: actions/setup-python@v5.4.0
-        with:
-          python-version: 3.13
-      - name: Install Poetry
-        run: pipx install poetry==2.0.1
-      - name: Install dependencies
-        run: just tests::install
+      - name: Set up Python Dependencies
+        uses: ./.github/actions/setup-python-dependencies
       - name: Generate Ruff Sarif
         run: just tests::ruff-lint-check
         env:
@@ -175,7 +167,7 @@ jobs:
       matrix:
         language: [typescript, python, actions]
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4.2.2
         with:
           fetch-depth: 0
@@ -195,7 +187,7 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4.2.2
         with:
           fetch-depth: 0
@@ -214,16 +206,8 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - name: Set up Just
-        uses: extractions/setup-just@v2
-      - name: Set up Python 3.13
-        uses: actions/setup-python@v5.4.0
-        with:
-          python-version: 3.13
-      - name: Install Poetry
-        run: pipx install poetry==2.0.1
-      - name: Install dependencies
-        run: just tests::install
+      - name: Set up Python Dependencies
+        uses: ./.github/actions/setup-python-dependencies
       - name: Run zizmor 🌈
         run: poetry -C tests run zizmor --format sarif .. > results.sarif
         env:
