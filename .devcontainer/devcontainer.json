@@ -1,0 +1,7 @@
+{
+  "tasks": {
+    "build": "just dashboard::build",
+    "launch": "just dashboard::dev",
+    "test": "just tests::ui-tests"
+  }
+}
