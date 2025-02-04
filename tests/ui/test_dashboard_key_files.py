@@ -5,7 +5,7 @@ from playwright.sync_api import Page, expect
 from .utils.constants import DASHBOARD_URL
 
 
-def test_table_sorting__details(page: Page) -> None:
+def test_table_sorting__key_files(page: Page) -> None:
     """Test that the repository table can be sorted in asc and dsc order."""
     # Arrange
     page.goto(DASHBOARD_URL)
