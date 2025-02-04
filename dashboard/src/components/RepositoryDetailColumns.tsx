@@ -72,6 +72,12 @@ export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
       </Button>
     ),
     cell: ({ row }) => (
+      <a
+        href={`${row.original.repository_link}/issues`}
+        className="hover:underline"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
       <Badge
         variant="default"
         className={
@@ -80,6 +86,7 @@ export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
       >
         {row.getValue("open_issues")}
       </Badge>
+      </a>
     ),
   },
 ]
