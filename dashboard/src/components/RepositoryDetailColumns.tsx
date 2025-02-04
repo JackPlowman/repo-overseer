@@ -41,6 +41,12 @@ export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
       </Button>
     ),
     cell: ({ row }) => (
+      <a
+          href={`${row.original.repository_link}/pulls`}
+          className="hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
       <Badge
         variant="default"
         className={
@@ -49,9 +55,9 @@ export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
             : "bg-green-600"
         }
       >
-        {/*  */}
         {row.getValue("open_pull_requests")}
       </Badge>
+      </a>
     ),
   },
   {
