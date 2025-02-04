@@ -6,4 +6,3 @@ A simple web dashboard for managing multiple repositories.
 
 - [repo-overseer](#repo-overseer)
   - [Table of Contents](#table-of-contents)
-
