@@ -1,3 +1,5 @@
+set export
+RERUN_CONFIG := "--reruns 2 --reruns-delay 1"
 # ------------------------------------------------------------------------------
 # Common Commands
 # ------------------------------------------------------------------------------
@@ -12,11 +14,11 @@ playwright-install:
 
 # Run ui playwright tests (headless)
 ui-tests:
-    poetry run pytest ui
+    poetry run pytest ui $RERUN_CONFIG
 
 # Run ui playwright tests in headed mode
 ui-tests-headed:
-    poetry run pytest ui --headed
+    poetry run pytest ui --headed $RERUN_CONFIG
 
 # Validates Pyproject
 pyproject-check:
