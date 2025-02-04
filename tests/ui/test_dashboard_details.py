@@ -29,3 +29,4 @@ def test_table_sorting__details(page: Page) -> None:
     first_repo = page.locator("tbody tr").first.locator("td").first
     first_repo.wait_for(state="visible")
     expect(first_repo).to_contain_text("useful-commands", timeout=5000)
+
