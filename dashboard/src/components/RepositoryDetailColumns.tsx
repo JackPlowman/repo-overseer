@@ -41,17 +41,23 @@ export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
       </Button>
     ),
     cell: ({ row }) => (
-      <Badge
-        variant="default"
-        className={
-          row.getValue("open_pull_requests") > 3
-            ? "bg-amber-600"
-            : "bg-green-600"
-        }
+      <a
+        href={`${row.original.repository_link}/pulls`}
+        className="hover:underline"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        {/*  */}
-        {row.getValue("open_pull_requests")}
-      </Badge>
+        <Badge
+          variant="default"
+          className={
+            row.getValue("open_pull_requests") > 3
+              ? "bg-amber-600"
+              : "bg-green-600"
+          }
+        >
+          {row.getValue("open_pull_requests")}
+        </Badge>
+      </a>
     ),
   },
   {
