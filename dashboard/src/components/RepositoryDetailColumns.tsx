@@ -78,14 +78,14 @@ export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
         target="_blank"
         rel="noopener noreferrer"
       >
-      <Badge
-        variant="default"
-        className={
-          row.getValue("open_issues") > 3 ? "bg-amber-600" : "bg-green-600"
-        }
-      >
-        {row.getValue("open_issues")}
-      </Badge>
+        <Badge
+          variant="default"
+          className={
+            row.getValue("open_issues") > 3 ? "bg-amber-600" : "bg-green-600"
+          }
+        >
+          {row.getValue("open_issues")}
+        </Badge>
       </a>
     ),
   },
