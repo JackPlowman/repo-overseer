@@ -25,7 +25,6 @@ ignore = [
   "ISC001",  # Ignore due to conflict with Ruff formatter
   "PLR2004", # Ignore magic value
   "D104",    # Ignore missing docstring in public package
-  "D100",    # Ignore missing docstring in public module
   "S101",    # Ignore use of assert
 ]
 

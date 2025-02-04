@@ -1,3 +1,5 @@
+"""Test constants."""
+
 REPOSITORY_PREFIX = "https://jackplowman.github.io/repo-overseer"
 DASHBOARD_URL = f"{REPOSITORY_PREFIX}/"
 SITEMAP_INDEX_URL = f"{REPOSITORY_PREFIX}/sitemap-index.xml"
