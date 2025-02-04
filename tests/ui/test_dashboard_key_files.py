@@ -30,6 +30,7 @@ def test_table_sorting__key_files(page: Page) -> None:
     first_repo.wait_for(state="visible")
     expect(first_repo).to_contain_text("useful-commands", timeout=5000)
 
+
 def test_table_pagination__key_files(page: Page) -> None:
     """Test that the repository table can be paginated."""
     # Arrange
