@@ -22,6 +22,10 @@ ui-tests:
 ui-tests-headed:
     poetry run pytest ui --headed $RERUN_CONFIG
 
+# Run wip ui playwright tests in headed mode
+ui-tests-wip:
+    poetry run pytest ui --headed -k wip
+
 # Validates Pyproject
 pyproject-check:
     poetry check
