@@ -12,6 +12,7 @@ permissions:
 
 jobs:
   run-validator:
+    name: Run Validator
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -43,6 +44,7 @@ jobs:
           path: repositories.json
 
   build-site:
+    name: Build Site
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -65,6 +67,7 @@ jobs:
           path: dashboard
 
   deploy:
+    name: Deploy to GitHub Pages
     needs: build-site
     runs-on: ubuntu-latest
     permissions:
