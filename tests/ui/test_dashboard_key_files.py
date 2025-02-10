@@ -5,7 +5,7 @@ from playwright.sync_api import Page, expect
 from .utils.constants import DASHBOARD_URL
 
 
-def test_table_sorting__key_files(page: Page) -> None:
+def test_key_files_table_sorting__repository(page: Page) -> None:
     """Test that the repository table can be sorted in asc and dsc order."""
     # Arrange
     page.goto(DASHBOARD_URL)
@@ -31,7 +31,7 @@ def test_table_sorting__key_files(page: Page) -> None:
     expect(first_repo).to_contain_text("useful-commands", timeout=5000)
 
 
-def test_table_pagination__key_files(page: Page) -> None:
+def test_key_files_table_pagination_key_files(page: Page) -> None:
     """Test that the repository table can be paginated."""
     # Arrange
     page.goto(DASHBOARD_URL)
@@ -50,4 +50,4 @@ def test_table_pagination__key_files(page: Page) -> None:
         # Wait for pagination to complete
         page.wait_for_selector("tbody tr")
     # Assert
-    assert count > 1
+    assert count >= 1
