@@ -26,6 +26,10 @@ ui-tests-headed:
 ui-tests-wip:
     poetry run pytest ui --headed -k wip
 
+# Run wip ui playwright tests in debug headed mode
+ui-tests-wip-debug:
+    PWDEBUG=1  poetry run pytest ui --headed -k wip
+
 # Validates Pyproject
 pyproject-check:
     poetry check
