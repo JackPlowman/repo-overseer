@@ -15,7 +15,7 @@ export const RepositoryKeyFileColumns: ColumnDef<Repository>[] = [
     accessorKey: "name",
     header: ({ column }) => {
       return (
-        <Button variant="ghost" onClick={() => column.toggleSorting()}>
+        <Button variant="ghost" onClick={() => column.toggleSorting()} >
           Repository
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
@@ -37,7 +37,7 @@ export const RepositoryKeyFileColumns: ColumnDef<Repository>[] = [
   {
     accessorKey: "has_license",
     header: ({ column }) => (
-      <Button variant="ghost" onClick={() => column.toggleSorting()}>
+      <Button variant="ghost" onClick={() => column.toggleSorting()} data-testid="has-license">
         <div className="flex items-center gap-2">
           <ShieldAlert className="h-4 w-4" />
           <span>License</span>
@@ -55,7 +55,7 @@ export const RepositoryKeyFileColumns: ColumnDef<Repository>[] = [
   {
     accessorKey: "has_readme",
     header: ({ column }) => (
-      <Button variant="ghost" onClick={() => column.toggleSorting()}>
+      <Button variant="ghost" onClick={() => column.toggleSorting()} data-testid="has-readme">
         <div className="flex items-center gap-2">
           <ShieldAlert className="h-4 w-4" />
           <span>Readme</span>
@@ -73,7 +73,7 @@ export const RepositoryKeyFileColumns: ColumnDef<Repository>[] = [
   {
     accessorKey: "has_security_policy",
     header: ({ column }) => (
-      <Button variant="ghost" onClick={() => column.toggleSorting()}>
+      <Button variant="ghost" onClick={() => column.toggleSorting()} data-testid="has-security-policy">
         <div className="flex items-center gap-2">
           <ShieldAlert className="h-4 w-4" />
           <span>Security Policy</span>
@@ -95,7 +95,7 @@ export const RepositoryKeyFileColumns: ColumnDef<Repository>[] = [
   {
     accessorKey: "has_code_of_conduct",
     header: ({ column }) => (
-      <Button variant="ghost" onClick={() => column.toggleSorting()}>
+      <Button variant="ghost" onClick={() => column.toggleSorting()} data-testid="has-code-of-conduct">
         <div className="flex items-center gap-2">
           <ShieldAlert className="h-4 w-4" />
           <span>Code of Conduct</span>
@@ -117,7 +117,7 @@ export const RepositoryKeyFileColumns: ColumnDef<Repository>[] = [
   {
     accessorKey: "has_contributing",
     header: ({ column }) => (
-      <Button variant="ghost" onClick={() => column.toggleSorting()}>
+      <Button variant="ghost" onClick={() => column.toggleSorting()} data-testid="has-contributing">
         <div className="flex items-center gap-2">
           <ShieldAlert className="h-4 w-4" />
           <span>Contributing</span>
@@ -139,7 +139,7 @@ export const RepositoryKeyFileColumns: ColumnDef<Repository>[] = [
   {
     accessorKey: "has_project_technologies",
     header: ({ column }) => (
-      <Button variant="ghost" onClick={() => column.toggleSorting()}>
+      <Button variant="ghost" onClick={() => column.toggleSorting()} data-testid="has-project-technologies">
         <div className="flex items-center gap-2">
           <ShieldAlert className="h-4 w-4" />
           <span>Project Technologies</span>

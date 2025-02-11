@@ -32,7 +32,7 @@ export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
   {
     accessorKey: "open_pull_requests",
     header: ({ column }) => (
-      <Button variant="ghost" onClick={() => column.toggleSorting()}>
+      <Button variant="ghost" onClick={() => column.toggleSorting()} data-testid="pull-requests">
         <div className="flex items-center gap-2">
           <GitPullRequest className="h-4 w-4" />
           <span>Pull Requests</span>
@@ -63,7 +63,7 @@ export const RepositoryDetailColumns: ColumnDef<Repository>[] = [
   {
     accessorKey: "open_issues",
     header: ({ column }) => (
-      <Button variant="ghost" onClick={() => column.toggleSorting()}>
+      <Button variant="ghost" onClick={() => column.toggleSorting() } data-testid="issues">
         <div className="flex items-center gap-2">
           <CircleDot className="h-4 w-4" />
           <span>Issues</span>
