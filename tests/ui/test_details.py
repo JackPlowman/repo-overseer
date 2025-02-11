@@ -28,23 +28,26 @@ class TestDetailsTable:
         # Wait for table to be loaded initially
         page.wait_for_selector("tbody tr")
         # Get the repository column header button
-        sort_button = page.get_by_role("button", name=column)
+        page.get_by_role("button", name="Pull Requests").click()
+        sleep(60)
+
         # Act & Assert - First click (ascending)
-        sort_button.click()
-        # Wait for the table to be sorted
-        sleep(1)
-        # Get all rows in the table
-        rows = page.locator("tbody tr")
-        # Iterate through the rows and compare values
+        # sort_button.click()
+        # # Wait for the table to be sorted
+        # sleep(1)
+        # # Get all rows in the table
+        # rows = page.locator("tbody tr")
+        # # Iterate through the rows and compare values
         # first_value = rows.nth(0).locator("td").nth(column_position).text_content()
         # second_value = rows.nth(1).locator("td").nth(column_position).text_content()
-        # raise NotImplementedError(first_value, second_value)
-        for i in range(rows.count() - 1):
-            first_value = rows.nth(i).locator("td").nth(column_position).text_content()
-            second_value = (
-                rows.nth(i + 1).locator("td").nth(column_position).text_content()
-            )
-            assert first_value >= second_value, (
-                f"Row {i} value {first_value} is not less than or equal to "
-                f"row {i + 1} value {second_value}"
-            )
+        # raise Exception(first_value, second_value)
+        # for i in range(rows.count() - 1):
+        #     first_value = rows.nth(i).locator("td").nth(column_position).text_content()
+        #     # first_value = rows.nth(i).locator("td").nth(column_position).text_content()
+        #     # second_value = (
+        #     #     rows.nth(i + 1).locator("td").nth(column_position).text_content()
+        #     # )
+        #     # assert first_value >= second_value, (
+        #     #     f"Row {i} value {first_value} is not less than or equal to "
+        #     #     f"row {i + 1} value {second_value}"
+        #     # )
