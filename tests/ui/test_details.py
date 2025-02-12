@@ -26,8 +26,6 @@ def test_values_have_link(column_position: int, link_suffix: str, page: Page) ->
     link = first_cell.locator("a").first
     # Act
     href = link.get_attribute("href")
-    expected_url = (
-        f"https://github.com/JackPlowman/{first_row_repository.text_content()}/{link_suffix}"
-    )
+    expected_url = f"https://github.com/JackPlowman/{first_row_repository.text_content()}/{link_suffix}"
     # Assert
     assert expected_url == href, f"Expected {expected_url} but got {href}"
