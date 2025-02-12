@@ -16,7 +16,7 @@ playwright-install:
 
 # Run ui playwright tests (headless)
 ui-tests:
-    poetry run pytest ui $RERUN_CONFIG
+    poetry run pytest ui
 
 # Run ui playwright tests in headed mode
 ui-tests-headed:
