@@ -13,7 +13,7 @@ def test_table_sorting__repository_column(column: str, page: Page) -> None:
     page.goto(DASHBOARD_URL)
     # Wait for table to be loaded initially
     page.wait_for_selector("tbody tr")
-    # Select the details tab
+    # Select the tab
     page.locator(f"text={column}").click()
     # Wait for table to be loaded initially
     page.wait_for_selector("tbody tr")
