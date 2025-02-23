@@ -22,7 +22,6 @@ ui-tests:
 ui-tests-headed:
     uv run pytest ui --headed $RERUN_CONFIG
 
-
 # ------------------------------------------------------------------------------
 # Ruff - Python Linting and Formatting
 # Set up ruff red-knot when it's ready
