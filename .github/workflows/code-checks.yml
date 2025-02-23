@@ -80,7 +80,7 @@ jobs:
         run: just dashboard::eslint-with-sarif
         continue-on-error: true
       - name: Upload analysis results to GitHub
-        uses: github/codeql-action/upload-sarif@v3.28.9
+        uses: github/codeql-action/upload-sarif@v3.28.10
         with:
           sarif_file: dashboard/eslint-results.sarif
           wait-for-processing: true
@@ -110,12 +110,10 @@ jobs:
           RUFF_OUTPUT_FILE: "ruff-results.sarif"
         continue-on-error: true
       - name: Upload Ruff analysis results to GitHub
-        uses: github/codeql-action/upload-sarif@v3.28.9
+        uses: github/codeql-action/upload-sarif@v3.28.10
         with:
           sarif_file: tests/ruff-results.sarif
           wait-for-processing: true
-      - name: Validates Pyproject
-        run: just tests::pyproject-check
       - name: Check Python Code Format (Ruff)
         run: just tests::ruff-format-check
         env:
@@ -173,13 +171,13 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3.28.9
+        uses: github/codeql-action/init@v3.28.10
         with:
           languages: ${{ matrix.language }}
           queries: security-and-quality
           config-file: .github/other-configurations/codeql-config.yml
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3.28.9
+        uses: github/codeql-action/analyze@v3.28.10
 
   run-code-limit:
     name: Run CodeLimit
@@ -210,11 +208,11 @@ jobs:
       - name: Set up Python Dependencies
         uses: ./.github/actions/setup-python-dependencies
       - name: Run zizmor 🌈
-        run: poetry -C tests run zizmor --format sarif .. > results.sarif
+        run: uv --project tests run zizmor --format sarif . > results.sarif
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@v3.28.9
+        uses: github/codeql-action/upload-sarif@v3.28.10
         with:
           sarif_file: results.sarif
           category: zizmor
