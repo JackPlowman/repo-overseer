@@ -32,12 +32,12 @@ jobs:
         uses: actions/setup-python@v5.4.0
         with:
           python-version: 3.13
-      - name: Install Poetry
-        run: pipx install poetry==2.1.1
+      - name: Install UV
+        run: pipx install uv==0.6.2
       - name: Install dependencies
-        run: poetry install
+        run: uv sync
       - name: Run Validator
-        run: poetry run python3 -m validator
+        run: uv run python3 -m validator
         env:
           INPUT_GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           INPUT_REPOSITORY_OWNER: ${{ github.repository_owner }}
