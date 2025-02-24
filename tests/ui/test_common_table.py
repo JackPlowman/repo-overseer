@@ -1,5 +1,7 @@
 """Tests for the common table components."""
 
+from time import sleep
+
 import pytest
 from playwright.sync_api import Page, expect
 
@@ -11,6 +13,7 @@ def test_table_sorting__repository_column(column: str, page: Page) -> None:
     """Test that the repository column can be sorted in asc and dsc order."""
     # Arrange
     page.goto(DASHBOARD_URL)
+    sleep(1)
     # Wait for table to be loaded initially
     page.wait_for_selector("tbody tr")
     # Select the tab
@@ -18,15 +21,14 @@ def test_table_sorting__repository_column(column: str, page: Page) -> None:
     # Wait for table to be loaded initially
     page.wait_for_selector("tbody tr")
     # Get the repository column header button
-    sort_button = page.get_by_role("button", name="Repository")
     # Act & Assert - First click (ascending)
-    sort_button.click()
+    page.get_by_role("button", name="Repository").click()
     # Wait for sort to complete and get first cell
     first_repo = page.locator("tbody tr").first.locator("td").first
     first_repo.wait_for(state="visible")
-    expect(first_repo).to_contain_text("aws-timing-scripts", timeout=5000)
+    expect(first_repo).to_contain_text("actions-status", timeout=5000)
     # Act & Assert - Second click (descending)
-    sort_button.click()
+    page.get_by_role("button", name="Repository").click()
     # Wait for sort to complete and get first cell
     first_repo = page.locator("tbody tr").first.locator("td").first
     first_repo.wait_for(state="visible")

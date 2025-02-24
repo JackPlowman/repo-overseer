@@ -22,6 +22,10 @@ ui-tests:
 ui-tests-headed:
     uv run pytest ui --headed $RERUN_CONFIG
 
+# Run ui playwright tests in headed mode with WIP
+ui-tests-wip:
+    uv run pytest ui --headed -k "wip"
+
 # ------------------------------------------------------------------------------
 # Ruff - Python Linting and Formatting
 # Set up ruff red-knot when it's ready
