@@ -35,7 +35,6 @@ def test_table_sorting__repository_column(column: str, page: Page) -> None:
     expect(first_repo).to_contain_text("useful-commands", timeout=5000)
 
 
-@pytest.mark.wip
 @pytest.mark.parametrize("column", ["Details", "Security", "Key Files"])
 def test_details_table_pagination(column: str, page: Page) -> None:
     """Test that the table can be paginated."""
