@@ -4,7 +4,6 @@ updates:
   - package-ecosystem: "github-actions"
     directories:
       - "/"
-      - "./.github/actions/setup-chrome-dependencies"
       - "./.github/actions/setup-python-dependencies"
     commit-message:
       prefix: "deps(github-actions)"
