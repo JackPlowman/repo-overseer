@@ -16,7 +16,7 @@ playwright-install:
 
 # Install playwright minimum dependencies
 playwright-install-minimum:
-    uv run playwright install --with-deps --only-shell
+    uv run playwright install --with-deps --only-shell chromium
 
 # Run ui playwright tests (headless)
 ui-tests:
