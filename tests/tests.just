@@ -14,6 +14,10 @@ install:
 playwright-install:
     uv run playwright install
 
+# Install playwright minimum dependencies
+playwright-install-minimum:
+    uv run playwright install chrome
+
 # Run ui playwright tests (headless)
 ui-tests:
     uv run pytest ui

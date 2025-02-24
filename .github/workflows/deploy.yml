@@ -96,8 +96,9 @@ jobs:
           persist-credentials: false
       - name: Set up Python Dependencies
         uses: ./.github/actions/setup-python-dependencies
-      - name: Set up Chrome Dependencies
-        uses: ./.github/actions/setup-chrome-dependencies
+      - name: Install Playwright Dependencies
+        shell: bash
+        run: just tests::playwright-install-minimum
       - name: Run UI Tests
         run: just tests::ui-tests
 
