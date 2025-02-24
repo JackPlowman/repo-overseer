@@ -1,5 +1,7 @@
 """Tests for the details table on the page."""
 
+from time import sleep
+
 import pytest
 from playwright.sync_api import Page
 
@@ -13,6 +15,7 @@ def test_values_have_link(column_position: int, link_suffix: str, page: Page) ->
     """Test that the details table values have the correct link."""
     # Arrange
     page.goto(DASHBOARD_URL)
+    sleep(1)
     # Wait for table to be loaded initially
     page.wait_for_selector("tbody tr")
     # Select the details tab

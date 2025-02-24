@@ -40,6 +40,7 @@ def test_details_table_pagination(column: str, page: Page) -> None:
     """Test that the table can be paginated."""
     # Arrange
     page.goto(DASHBOARD_URL)
+    sleep(1)
     # Wait for table to be loaded initially
     page.wait_for_selector("tbody tr")
     # Select the details tab
@@ -48,11 +49,11 @@ def test_details_table_pagination(column: str, page: Page) -> None:
     page.wait_for_selector("tbody tr")
     # Get the next page button
     count = 0
-    while page.locator("text=Next").first.is_enabled():
+    while page.get_by_role("button", name="Next").get_attribute("disabled") is None:
         next_page_button = page.get_by_role("button", name="Next")
         count += 1
         next_page_button.click()
         # Wait for pagination to complete
         page.wait_for_selector("tbody tr")
     # Assert
-    assert count >= 1
+    assert count == 2
