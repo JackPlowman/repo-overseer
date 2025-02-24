@@ -40,6 +40,7 @@ def test_details_table_pagination(column: str, page: Page) -> None:
     """Test that the table can be paginated."""
     # Arrange
     page.goto(DASHBOARD_URL)
+    sleep(1)
     # Wait for table to be loaded initially
     page.wait_for_selector("tbody tr")
     # Select the details tab
