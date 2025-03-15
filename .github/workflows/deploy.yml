@@ -60,7 +60,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Download Validator Results
-        uses: actions/download-artifact@v4.1.8
+        uses: actions/download-artifact@v4.1.9
         with:
           name: validator-results
           path: dashboard/src/data
