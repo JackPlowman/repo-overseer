@@ -41,7 +41,7 @@ jobs:
           INPUT_GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           INPUT_REPOSITORY_OWNER: ${{ github.repository_owner }}
       - name: Upload Validator Results
-        uses: actions/upload-artifact@v4.6.1
+        uses: actions/upload-artifact@v4.6.2
         with:
           name: validator-results
           path: repositories.json
@@ -60,7 +60,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Download Validator Results
-        uses: actions/download-artifact@v4.1.8
+        uses: actions/download-artifact@v4.2.1
         with:
           name: validator-results
           path: dashboard/src/data
