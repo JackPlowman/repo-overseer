@@ -65,7 +65,7 @@ jobs:
           name: validator-results
           path: dashboard/src/data
       - name: Install, build, and upload your site
-        uses: withastro/action@v3.0.2
+        uses: withastro/action@56781b97402ce0487b7e61ce2cb960c0e2cc5289 # v3.0.2
         with:
           path: dashboard
 
@@ -113,7 +113,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Run Link Tests
-        uses: JustinBeckwith/linkinator-action@v1.11.0
+        uses: JustinBeckwith/linkinator-action@3d5ba091319fa7b0ac14703761eebb7d100e6f6d # v1.11.0
         with:
           paths: https://jackplowman.github.io/repo-overseer
           recurse: true
