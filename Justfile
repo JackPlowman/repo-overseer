@@ -5,25 +5,25 @@ mod tests 'tests/tests.just'
 # Prettier
 # ------------------------------------------------------------------------------
 
-# Check if code is formatted correctly
+# Check all files with prettier
 prettier-check:
-    npx prettier . --check
+    prettier . --check
 
-# Format code with Prettier
+# Format all files with prettier
 prettier-format:
-    npx prettier . --check --write
+    prettier . --check --write
 
 # ------------------------------------------------------------------------------
 # Justfile
 # ------------------------------------------------------------------------------
 
-# Format the Just code
+# Format Justfile
 format:
     just --fmt --unstable
     just --fmt --unstable --justfile dashboard/dashboard.just
     just --fmt --unstable --justfile tests/tests.just
 
-# Check for Just format issues
+# Check Justfile formatting
 format-check:
     just --fmt --check --unstable
     just --fmt --check --unstable --justfile dashboard/dashboard.just
@@ -35,6 +35,39 @@ format-check:
 
 gitleaks-detect:
     gitleaks detect --source . > /dev/null
+
+# ------------------------------------------------------------------------------
+# Lefthook
+# ------------------------------------------------------------------------------
+
+# Validate lefthook config
+lefthook-validate:
+    lefthook validate
+
+# ------------------------------------------------------------------------------
+# Zizmor
+# ------------------------------------------------------------------------------
+
+# Run zizmor checking
+zizmor-check:
+    zizmor .
+
+
+# ------------------------------------------------------------------------------
+# Pinact
+# ------------------------------------------------------------------------------
+
+# Run pinact
+pinact-run:
+    pinact run -c .github/other-configurations/pinact.yml
+
+# Run pinact checking
+pinact-check:
+    pinact run -c .github/other-configurations/pinact.yml --verify --check
+
+# Run pinact update
+pinact-update:
+    pinact run -c .github/other-configurations/pinact.yml --update
 
 # ------------------------------------------------------------------------------
 # Git Hooks

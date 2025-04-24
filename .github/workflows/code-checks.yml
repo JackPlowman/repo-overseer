@@ -25,7 +25,7 @@ jobs:
           persist-credentials: false
       # Lint and Format everything but Python/JavaScript/TypeScript
       - name: Lint Code Base
-        uses: super-linter/super-linter/slim@v7.3.0
+        uses: super-linter/super-linter/slim@4e8a7c2bf106c4c766c816b35ec612638dc9b6b2 # v7.3.0
         env:
           VALIDATE_ALL_CODEBASE: true
           DEFAULT_BRANCH: main
@@ -71,7 +71,7 @@ jobs:
           cache: "npm"
           cache-dependency-path: "dashboard/package-lock.json"
       - name: Set up Just
-        uses: extractions/setup-just@v2
+        uses: extractions/setup-just@dd310ad5a97d8e7b41793f8ef055398d51ad4de6 # v2.0.0
       - name: Install Dependencies
         working-directory: dashboard
         run: npm ci
@@ -134,7 +134,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Check Markdown links
-        uses: UmbrellaDocs/action-linkspector@v1.3.1
+        uses: UmbrellaDocs/action-linkspector@c6d4525e9f50b27a0e78fc42b537141058d034ef # v1.3.1
         with:
           github_token: ${{ secrets.GH_TOKEN }}
           config_file: .github/other-configurations/.linkspector.yml
@@ -153,7 +153,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Set up Just
-        uses: extractions/setup-just@v2
+        uses: extractions/setup-just@dd310ad5a97d8e7b41793f8ef055398d51ad4de6 # v2.0.0
       - name: Check Justfile Format
         run: just format-check
 
@@ -193,7 +193,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: "Run CodeLimit"
-        uses: getcodelimit/codelimit-action@v1
+        uses: getcodelimit/codelimit-action@a036c6897be9ccf69cde9dfe50eafa8cd79c98f8 # v1
 
   run-zizmor:
     name: Check GitHub Actions with zizmor
