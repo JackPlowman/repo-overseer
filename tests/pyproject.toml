@@ -8,7 +8,7 @@ dependencies = ["pytest==8.3.5", "pytest-playwright==0.7.0", "requests==2.32.3",
 dev = ["zizmor==1.6.0", "ruff==0.11.7"]
 
 [tool.uv]
-required-version = "0.6.16"
+required-version = "0.6.17"
 package = false
 
 [tool.ruff]
