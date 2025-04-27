@@ -33,6 +33,7 @@ ui-tests-wip:
 # Validate uv locked
 uv-lock-check:
     uv lock --check
+
 # ------------------------------------------------------------------------------
 # Ruff - Python Linting and Formatting
 # Set up ruff red-knot when it's ready
