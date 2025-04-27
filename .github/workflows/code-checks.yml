@@ -115,6 +115,8 @@ jobs:
         with:
           sarif_file: tests/ruff-results.sarif
           wait-for-processing: true
+      - name: Validate UV Lock
+        run: just tests::uv-lock-check
       - name: Check Python Code Format (Ruff)
         run: just tests::ruff-format-check
         env:
