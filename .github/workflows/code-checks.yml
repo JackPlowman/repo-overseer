@@ -103,7 +103,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Set up Python Dependencies
-        uses: ./.github/actions/setup-python-dependencies
+        uses: ./.github/actions/setup-test-dependencies
       - name: Generate Ruff Sarif
         run: just tests::ruff-lint-check
         env:
@@ -225,7 +225,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Set up Python Dependencies
-        uses: ./.github/actions/setup-python-dependencies
+        uses: ./.github/actions/setup-test-dependencies
       - name: Run zizmor 🌈
         run: uv --project tests run zizmor --format sarif . > results.sarif
         env:
