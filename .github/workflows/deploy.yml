@@ -100,8 +100,6 @@ jobs:
           persist-credentials: false
       - name: Set up Python Tests Dependencies
         uses: ./.github/actions/setup-test-dependencies
-        with:
-          setup-browsers: true
       - name: Install Playwright Dependencies
         shell: bash
         run: just tests::playwright-install
