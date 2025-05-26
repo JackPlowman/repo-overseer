@@ -24,7 +24,7 @@ jobs:
         id: validator
         uses: JackPlowman/repo_standards_validator@6606c1ff8eca25dd6e361b456ac9ba87b849364f # v1.0.0
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           REPOSITORY_OWNER: JackPlowman
       - name: Upload Validator Results
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
