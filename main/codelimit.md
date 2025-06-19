@@ -3,16 +3,16 @@
 ### Overview
 | **Language** | **Files** | **Functions** | **Lines of Code** | **⚠** | **⛌** |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| TypeScript | 2 | 1 | 3 | 0 | 0 |
-| JavaScript | 3 | 0 | 0 | 0 | 0 |
-| **Totals** | **5** | **1** | **3** | **0** | **0** |
+| TypeScript | [1;36m2[0m | [1;36m1[0m | [1;36m3[0m | [1;36m0[0m | [1;36m0[0m |
+| JavaScript | [1;36m3[0m | [1;36m0[0m | [1;36m0[0m | [1;36m0[0m | [1;36m0[0m |
+| **Totals** | **[1;36m5[0m** | **[1;36m1[0m** | **[1;36m3[0m** | **[1;36m0[0m** | **[1;36m0[0m** |
 
 ### Summary
-| **Easy / Verbose** | **Hard-to-maintain ⚠** | **Unmaintainable ⛌** |
+| **Easy [35m/[0m Verbose** | **Hard-to-maintain ⚠** | **Unmaintainable ⛌** |
 | ---: | ---: | ---: |
-| 100% | 0% | 0% |
+| [1;36m100[0m% | [1;36m0[0m% | [1;36m0[0m% |
 
-✅ 100% of the functions are maintainable, no refactoring necessary.
+✅ [1;36m100[0m% of the functions are maintainable, no refactoring necessary.
 
 ### Findings
 | **Function** | **Length** | **File** |
