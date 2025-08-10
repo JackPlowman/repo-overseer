@@ -36,6 +36,7 @@ def test_key_files_icons_match_boolean_values(page: Page) -> None:
         cell = first_row.locator(f"td:nth-child({idx})")
         assert _cell_has_green_check(cell) or _cell_has_red_cross(cell)
 
+
 @pytest.mark.skip("TODO: Fix this test")
 def test_key_files_sorting_changes_order(page: Page) -> None:
     """Toggling the License header should change ordering."""

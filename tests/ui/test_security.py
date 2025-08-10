@@ -25,13 +25,13 @@ def test_security_code_scanning_badge_color_matches_value(page: Page) -> None:
         text = (last_cell.text_content() or "").strip()
         classes = last_cell.locator("*").first.get_attribute("class") or ""
         if text == "0":
-            assert (
-                "bg-green-400" in classes
-            ), f"Expected green class for 0, got: {classes}"
+            assert "bg-green-400" in classes, (
+                f"Expected green class for 0, got: {classes}"
+            )
         else:
-            assert (
-                "bg-red-400" in classes
-            ), f"Expected red class for non-zero, got: {classes}"
+            assert "bg-red-400" in classes, (
+                f"Expected red class for non-zero, got: {classes}"
+            )
 
 
 def test_security_sorting_changes_order(page: Page) -> None:
@@ -44,8 +44,7 @@ def test_security_sorting_changes_order(page: Page) -> None:
 
     def first_repo_name() -> str:
         return (
-            page.locator("tbody tr").first.locator("td").first.text_content()
-            or ""
+            page.locator("tbody tr").first.locator("td").first.text_content() or ""
         ).strip()
 
     # Act
