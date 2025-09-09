@@ -3,14 +3,14 @@ name = "tests"
 dynamic = ["version"]
 requires-python = ">=3.13.0"
 dependencies = [
-  "pytest==8.4.1",
-  "pytest-playwright==0.7.0",
+  "pytest==8.4.2",
+  "pytest-playwright==0.7.1",
   "requests==2.32.5",
   "pytest-rerunfailures==15.1",
 ]
 
 [project.optional-dependencies]
-dev = ["ruff==0.12.11", "ty==0.0.1a19"]
+dev = ["ruff==0.12.12", "ty==0.0.1a19"]
 
 [tool.uv]
 required-version = "~=0.8.0"
