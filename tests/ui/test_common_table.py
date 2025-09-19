@@ -56,4 +56,4 @@ def test_details_table_pagination(column: str, page: Page) -> None:
         # Wait for pagination to complete
         page.wait_for_selector("tbody tr")
     # Assert
-    assert count == 2
+    assert count == 3
