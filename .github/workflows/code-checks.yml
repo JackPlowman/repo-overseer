@@ -19,7 +19,7 @@ jobs:
     name: Run TypeScript Code Checks
     runs-on: ubuntu-latest
     permissions:
-      security-events: write
+      security-events: write  # Allow the workflow to upload analysis results
     steps:
       - name: Checkout Repository
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
@@ -53,8 +53,6 @@ jobs:
   run-typescript-format-checks:
     name: Run TypeScript Format Checks
     runs-on: ubuntu-latest
-    permissions:
-      security-events: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
@@ -79,8 +77,7 @@ jobs:
     name: Run Python Tests Lint Checks
     runs-on: ubuntu-latest
     permissions:
-      statuses: write
-      security-events: write
+      security-events: write # Allow the workflow to upload analysis results
     steps:
       - name: Checkout Repository
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
@@ -138,9 +135,6 @@ jobs:
   run-python-tests-lockfile-check:
     name: Run Python Tests Lockfile Check
     runs-on: ubuntu-latest
-    permissions:
-      statuses: write
-      security-events: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
@@ -156,9 +150,9 @@ jobs:
     name: Common Code Checks
     permissions:
       contents: read
-      actions: read
-      pull-requests: write
-      security-events: write
+      actions: read # Allow the workflow to read actions metadata
+      pull-requests: write # Allow the workflow to create and modify pull request comments
+      security-events: write # Allow the workflow to upload analysis results
     uses: JackPlowman/reusable-workflows/.github/workflows/common-code-checks.yml@6324ccca5dfacdedf7fa7d0b211245d06724b736 # v2025.10.25.01
     secrets:
       workflow_github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -167,7 +161,7 @@ jobs:
     name: CodeQL Analysis
     permissions:
       contents: read
-      security-events: write
+      security-events: write # Allow the workflow to upload analysis results
     strategy:
       matrix:
         language: [actions, typescript, python]
