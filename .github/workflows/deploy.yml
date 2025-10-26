@@ -36,7 +36,7 @@ jobs:
     name: Build Site
     runs-on: ubuntu-latest
     permissions:
-      id-token: write  # Allow the workflow to upload to GitHub Pages
+      id-token: write # Allow the workflow to upload to GitHub Pages
       pages: write # Allow the workflow to upload to GitHub Pages
     needs: run-validator
     steps:
