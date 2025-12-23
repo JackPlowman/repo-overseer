@@ -13,6 +13,7 @@
     "MD013": {
       "line_length": 600, // Line length 80 is far too short
     },
+    "MD022": false, // Allign with Prettier
     "MD026": {
       "punctuation": ".,;:!。，；:", // List of not allowed
     },
@@ -20,10 +21,11 @@
     "MD033": false, // Allow inline HTML
     "MD036": false, // Emphasis used instead of a heading
     "MD024": false, // Duplicate headings on the same level
-
+    "MD032": false, // Allign with Prettier
     // #################
     // # Rules by tags #
     // #################
     "blank_lines": false, // Error on blank lines
   },
+
 }

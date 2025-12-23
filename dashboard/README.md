@@ -1,3 +1,19 @@
+# repo-overseer dashboard
+
+Astro + React frontend that powers the repo-overseer dashboard. It renders a sortable, paginated table with Details, Key Files, and Security tabs backed by a static JSON dataset.
+
+## Setup
+- `npm install` (or `npm ci`)
+- Create `src/data/repositories.json` using the schema in the root README.
+- `npm run dev -- --host --port 8000` to align with the test defaults and local docs URL.
+
+## Scripts
+- `npm run dev`: start the dev server
+- `npm run build`: production bundle (GitHub Pages-ready with `base` set to `repo-overseer`)
+- `npm run preview`: serve the built site locally
+- `npm run lint`: ESLint over the Astro + React source
+
+See the root README for data shape, testing instructions, and deployment notes.
 # Astro Starter Kit: Basics
 
 ```sh
