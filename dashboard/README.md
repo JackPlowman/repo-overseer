@@ -4,17 +4,17 @@ Astro + React frontend that renders the repo health dashboard. It serves a sorta
 
 ## Prerequisites
 - Node 24.5+ and npm 11.5+
-- Optional: `just` for the recipes in [dashboard/dashboard.just](dashboard/dashboard.just)
+- Optional: `just` for the recipes in [dashboard.just](./dashboard.just)
 
 ## Setup
 1. Install deps: `npm install` (or `npm ci`).
-2. Add data: create [dashboard/src/data/repositories.json](dashboard/src/data/repositories.json) using the schema shown in the root README.
-3. Run dev server (port 8000 matches tests): `npm run dev -- --host --port 8000` then open http://localhost:8000/repo-overseer/.
+2. Add data: create [src/data/repositories.json](./src/data/repositories.json) using the schema shown in the root README.
+3. Run dev server (port 8000 matches tests): `npm run dev -- --host --port 8000` then open [http://localhost:8000/repo-overseer/](http://localhost:8000/repo-overseer/).
 4. Lint: `npm run lint`.
 5. Format check: `npm run prettier-check`.
 
 ## Build and preview
-- Build for GitHub Pages: `npm run build` (uses `site` and `base` in [dashboard/astro.config.mjs](dashboard/astro.config.mjs)).
+- Build for GitHub Pages: `npm run build` (uses `site` and `base` in [astro.config.mjs](./astro.config.mjs)).
 - Preview the built site locally: `npm run preview -- --host --port 8000`.
 
 ## Data file expectations
