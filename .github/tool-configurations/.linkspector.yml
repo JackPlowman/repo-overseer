@@ -7,3 +7,4 @@ aliveStatusCodes:
   - 200
 ignorePatterns:
   - pattern: "^http://localhost:8000/repo-overseer.*$"
+  - pattern: "^./src/data/repositories.json.*$"
