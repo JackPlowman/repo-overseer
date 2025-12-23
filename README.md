@@ -26,7 +26,7 @@ Dashboard for keeping multiple GitHub repositories healthy at a glance. Built wi
 1. Prereqs: Node 24.5+, npm 11.5+. Optional: `just` for the convenience recipes in [dashboard/dashboard.just](dashboard/dashboard.just).
 2. Install: `cd dashboard && npm install` (or `npm ci`).
 3. Add data: create `dashboard/src/data/repositories.json` (gitignored) using the schema below.
-4. Run locally: `npm run dev -- --host --port 8000` (port 8000 matches the test defaults). Navigate to http://localhost:8000/repo-overseer/.
+4. Run locally: `npm run dev -- --host --port 8000` (port 8000 matches the test defaults). Navigate to [http://localhost:8000/repo-overseer/](http://localhost:8000/repo-overseer/).
 5. Build: `npm run build` writes `dashboard/dist/` for GitHub Pages (site/base already set in [dashboard/astro.config.mjs](dashboard/astro.config.mjs)).
 6. Preview build: `npm run preview -- --host --port 8000`.
 
@@ -65,7 +65,7 @@ Dashboard for keeping multiple GitHub repositories healthy at a glance. Built wi
 
 ## Running the tests
 
-- UI tests live in [tests/ui](tests/ui) and default to the deployed site at https://jackplowman.github.io/repo-overseer.
+- UI tests live in [tests/ui](tests/ui) and default to the deployed site on [github pages](https://jackplowman.github.io/repo-overseer).
 - Prereqs: Python 3.13, [uv](https://github.com/astral-sh/uv), and browser binaries via Playwright.
 - Install once: `cd tests && uv sync --all-extras && uv run playwright install --with-deps`.
 - Run against deployed site: `uv run pytest ui -vv --reruns 2 --browser chromium`.

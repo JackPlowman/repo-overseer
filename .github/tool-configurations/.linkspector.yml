@@ -5,3 +5,5 @@ excludedFiles:
   - ./CHANGELOG.md
 aliveStatusCodes:
   - 200
+ignorePatterns:
+  - http://localhost:8000/repo-overseer/
