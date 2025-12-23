@@ -22,11 +22,11 @@ Astro + React frontend that renders the repo health dashboard. It serves a sorta
 
 ## Data file expectations
 
-- Place repo snapshots in [dashboard/src/data/repositories.json](dashboard/src/data/repositories.json); the folder is gitignored so you can keep private metadata out of the repo.
+- Place repo snapshots in [src/data/repositories.json](./src/data/repositories.json); the folder is gitignored so you can keep private metadata out of the repo.
 - Each entry should include repository details, key files booleans, and security flags. See the root README for a full example payload.
 
 ## Notes
 
-- UI components live under [dashboard/src/components](dashboard/src/components) and use TanStack Table plus shadcn-inspired primitives.
-- Styles come from Tailwind CSS 4 (see [dashboard/src/styles/globals.css](dashboard/src/styles/globals.css)).
+- UI components live under [src/components](./src/components) and use TanStack Table plus shadcn-inspired primitives.
+- Styles come from Tailwind CSS 4 (see [src/styles/globals.css](./src/styles/globals.css)).
 - The layout is configured for GitHub Pages at `jackplowman.github.io/repo-overseer`; no extra path tweaks are needed for publishing.
