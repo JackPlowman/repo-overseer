@@ -1,64 +1,27 @@
 # repo-overseer dashboard
 
-Astro + React frontend that powers the repo-overseer dashboard. It renders a sortable, paginated table with Details, Key Files, and Security tabs backed by a static JSON dataset.
+Astro + React frontend that renders the repo health dashboard. It serves a sortable, paginated table with Details, Key Files, and Security tabs backed by a local JSON data set.
+
+## Prerequisites
+- Node 24.5+ and npm 11.5+
+- Optional: `just` for the recipes in [dashboard/dashboard.just](dashboard/dashboard.just)
 
 ## Setup
-- `npm install` (or `npm ci`)
-- Create `src/data/repositories.json` using the schema in the root README.
-- `npm run dev -- --host --port 8000` to align with the test defaults and local docs URL.
+1. Install deps: `npm install` (or `npm ci`).
+2. Add data: create [dashboard/src/data/repositories.json](dashboard/src/data/repositories.json) using the schema shown in the root README.
+3. Run dev server (port 8000 matches tests): `npm run dev -- --host --port 8000` then open http://localhost:8000/repo-overseer/.
+4. Lint: `npm run lint`.
+5. Format check: `npm run prettier-check`.
 
-## Scripts
-- `npm run dev`: start the dev server
-- `npm run build`: production bundle (GitHub Pages-ready with `base` set to `repo-overseer`)
-- `npm run preview`: serve the built site locally
-- `npm run lint`: ESLint over the Astro + React source
+## Build and preview
+- Build for GitHub Pages: `npm run build` (uses `site` and `base` in [dashboard/astro.config.mjs](dashboard/astro.config.mjs)).
+- Preview the built site locally: `npm run preview -- --host --port 8000`.
 
-See the root README for data shape, testing instructions, and deployment notes.
-# Astro Starter Kit: Basics
+## Data file expectations
+- Place repo snapshots in [dashboard/src/data/repositories.json](dashboard/src/data/repositories.json); the folder is gitignored so you can keep private metadata out of the repo.
+- Each entry should include repository details, key files booleans, and security flags. See the root README for a full example payload.
 
-```sh
-npm create astro@latest -- --template basics
-```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Notes
+- UI components live under [dashboard/src/components](dashboard/src/components) and use TanStack Table plus shadcn-inspired primitives.
+- Styles come from Tailwind CSS 4 (see [dashboard/src/styles/globals.css](dashboard/src/styles/globals.css)).
+- The layout is configured for GitHub Pages at `jackplowman.github.io/repo-overseer`; no extra path tweaks are needed for publishing.
