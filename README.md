@@ -75,7 +75,7 @@ Dashboard for keeping multiple GitHub repositories healthy at a glance. Built wi
 
 - Dashboard: `just dashboard::dev`, `just dashboard::lint`, `just dashboard::prettier-check`.
 - Tests: `just tests::install`, `just tests::run-ci chromium`, `just tests::ruff-checks`.
-- Repo-wide helpers: `just prettier-check`, `just lefthook-validate`, `just gitleaks-detect`.
+- Repo-wide helpers: `just prettier-check`, `just prek-check`, `just gitleaks-detect`.
 
 ## Project structure
 
