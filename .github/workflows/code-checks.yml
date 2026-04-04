@@ -31,13 +31,13 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Set up Node.js with Cache
-        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
         with:
           node-version-file: "dashboard/package.json"
           cache: "npm"
           cache-dependency-path: "dashboard/package-lock.json"
       - name: Set up Just
-        uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3.0.0
+        uses: extractions/setup-just@f8a3cce218d9f83db3a2ecd90e41ac3de6cdfd9b # v3.1.0
       - name: Install Dependencies
         working-directory: dashboard
         run: npm ci
@@ -47,7 +47,7 @@ jobs:
         run: just dashboard::eslint-with-sarif
         continue-on-error: true
       - name: Upload analysis results to GitHub
-        uses: github/codeql-action/upload-sarif@89a39a4e59826350b863aa6b6252a07ad50cf83e # v4.32.4
+        uses: github/codeql-action/upload-sarif@c10b8064de6f491fea524254123dbe5e09572f13 # v4.35.1
         with:
           sarif_file: dashboard/eslint-results.sarif
           wait-for-processing: true
@@ -64,13 +64,13 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Set up Node.js with Cache
-        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
         with:
           node-version-file: "dashboard/package.json"
           cache: "npm"
           cache-dependency-path: "dashboard/package-lock.json"
       - name: Set up Just
-        uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3.0.0
+        uses: extractions/setup-just@f8a3cce218d9f83db3a2ecd90e41ac3de6cdfd9b # v3.1.0
       - name: Install Dependencies
         working-directory: dashboard
         run: npm ci
@@ -97,7 +97,7 @@ jobs:
           RUFF_OUTPUT_FILE: "ruff-results.sarif"
         continue-on-error: true
       - name: Upload Ruff analysis results to GitHub
-        uses: github/codeql-action/upload-sarif@89a39a4e59826350b863aa6b6252a07ad50cf83e # v4.32.4
+        uses: github/codeql-action/upload-sarif@c10b8064de6f491fea524254123dbe5e09572f13 # v4.35.1
         with:
           sarif_file: tests/ruff-results.sarif
           wait-for-processing: true
