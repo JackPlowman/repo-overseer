@@ -87,4 +87,4 @@ Dashboard for keeping multiple GitHub repositories healthy at a glance. Built wi
 ## Deployment notes
 
 - The Astro config sets `site` and `base` for GitHub Pages; running `npm run build` creates a `/repo-overseer`-ready bundle.
-- Robots.txt and sitemap generation are handled by `astro-robots-txt` and `@astrojs/sitemap` during build.
+- Robots.txt is served from `dashboard/public/robots.txt`; `@astrojs/sitemap` generates sitemaps during build.

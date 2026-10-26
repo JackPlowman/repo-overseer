@@ -66,15 +66,15 @@ actionlint-check:
 
 # Run pinact
 pinact-run:
-    pinact run
+    pinact run --exclude "^docker://"
 
 # Run pinact checking
 pinact-check:
-    pinact run --verify --check
+    pinact run --exclude "^docker://" --verify --check
 
 # Run pinact update
 pinact-update:
-    pinact run --update
+    pinact run --exclude "^docker://" --update
 
 # ------------------------------------------------------------------------------
 # EditorConfig

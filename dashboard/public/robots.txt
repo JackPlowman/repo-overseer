@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jackplowman.github.io/repo-overseer/sitemap-index.xml
