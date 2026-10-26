@@ -71,6 +71,6 @@ repos:
         entry: pinact
         additional_dependencies:
           - github.com/suzuki-shunsuke/pinact/v5/cmd/pinact@v5.0.2
-        args: ["run", "--verify", "--check"]
+        args: ["run", "--verify", "--check", "--exclude", "^docker://"]
         files: "^\\.github/(workflows|actions)/.*\\.ya?ml$|(^|/)action\\.ya?ml$"
         pass_filenames: false
