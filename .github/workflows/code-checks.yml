@@ -187,7 +187,7 @@ jobs:
       actions: read # Allow the workflow to read actions metadata
       pull-requests: write # Allow the workflow to create and modify pull request comments
       security-events: write # Allow the workflow to upload analysis results
-    uses: JackPlowman/reusable-workflows/.github/workflows/common-code-checks.yml@f82d61d53648ae90f8a0406c0f4bbf1aef332337 # v2026.10.25.01
+    uses: ./.github/workflows/common-code-checks.yml # zizmor: ignore[self-repository] actionlint does not yet support $/ paths
     secrets:
       workflow_github_token: ${{ secrets.GITHUB_TOKEN }}
 
